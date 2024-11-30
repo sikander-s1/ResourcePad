@@ -55,7 +55,7 @@ const divVariants = {
 };
 
 const Brand = ({ content }) => {
-    const { title, desc, image, card, hireTitle } = content;
+    const { title, desc, image, card, hireTitle, btn } = content;
     const [isMobile, setIsMobile] = useState(false);
 
     const controls = useAnimation();
@@ -132,31 +132,40 @@ const Brand = ({ content }) => {
                                     {card.map((cardData, index) => (
                                         <motion.div
                                             key={index}
-                                            className={`explorer-section--card flex items-center max-h-[350px] min-h-[400px] lg:min-h-[480px] rounded-[30px] border-8 border-white backdrop-blur-lg bg-gray-400 relative custom_shadow pt-[50px] pb-[70px] ${cardData.bgClass}`}
+                                            className={`explorer-section--card flex items-center max-h-[350px] min-h-[400px] lg:min-h-[480px] rounded-[30px] border-8 border-white bg-gray-400 relative custom_shadow pt-[50px] pb-[70px] ${cardData.bgClass}`}
                                             initial={{ scale: 1 }}
                                             animate={controls}
                                             transition={{ duration: 0.3 }}
                                         >
                                             <Image src={cardData.image} alt='Background Image' fill={true} className='object-cover object-center z-[-1] rounded-[20px]' />
                                             <div className="grid grid-cols-12">
-                                                <div className="col-span-12 md:col-span-6">
-                                                    <div className='pl-[40px] lg:pl-[60px] pr-[40px] md:pr-0'>
+                                                <div className={`col-span-12 ${btn ? 'md:col-span-6' : 'lg:col-span-7 xl:col-span-6'}`}>
+                                                    <div className='pl-[20px] sm:pl-[40px] lg:pl-[60px] pr-[20px] sm:pr-[40px] md:pr-0'>
                                                         <div className="number">
                                                             <span className='text-[#2020204b] text-[35px] leading-[40px] font-semibold mb-[20px] lg:mb-[60px] block'>{cardData.order}</span>
                                                         </div>
-                                                        <h3 className='text-[30px] lg:text-[40px] leading-[40px] lg:leading-[45px] text-[#202020] font-bold mb-3'>{cardData.title}</h3>
-                                                        <p className='text-[#646474] text-[15px] lg:text-[19px] leading-[22px] lg:leading-[25px] font-normal mb-[35px] lg:w-10/12'>{cardData.description}</p>
-                                                        <div className='flex items-center group overflow-hidden'>
-                                                            <CTA
-                                                                text="Learn More"
-                                                                href="#href"
-                                                                css="border border-[#B9B9B9] bg-transparent group-hover:bg-[#6B46FF] transition-all ease-in-out duration-700 text-[#646474] group-hover:text-white group-hover:border-[#6B46FF] font-semibold overflow-hidden" />
-                                                            <div className='overflow-hidden md:block hidden'>
-                                                                <Link href="#href" className='w-[50px] lg:w-[60px] h-[50px] lg:h-[60px] rounded-full border border-[#B9B9B9] group-hover:border-[#6B46FF] group-hover:bg-[#6B46FF] flex items-center justify-center  circleBtn overflow-hidden'>
-                                                                    <Image src={ArrowImage} alt='Arrow Image' width={16} height={16} className='group-hover:brightness-[100] group-hover:invert-0 transition-all ease-in-out duration-700' />
-                                                                </Link>
+                                                        <h3 className='text-[22px] sm:text-[30px] lg:text-[40px] leading-[32px] sm:leading-[40px] lg:leading-[45px] text-[#202020] font-bold mb-3'>{cardData.title}</h3>
+                                                        <p className={`text-[#646474] text-[15px] leading-[22px] font-normal mb-[25px] sm:mb-[35px] ${btn ? "lg:w-10/12 lg:text-[19px] lg:leading-[25px]" : "lg:text-[18px] lg:leading-[25px] lg:pr-[2px]"}`}>{cardData.description}</p>
+                                                        {btn ?
+                                                            <div className='flex items-center group overflow-hidden'>
+                                                                <CTA
+                                                                    text="Learn More"
+                                                                    href="#href"
+                                                                    css="border border-[#B9B9B9] bg-transparent group-hover:bg-[#6B46FF] transition-all ease-in-out duration-700 text-[#646474] group-hover:text-white group-hover:border-[#6B46FF] font-semibold overflow-hidden" />
+                                                                <div className='overflow-hidden md:block hidden'>
+                                                                    <Link href="#href" className='w-[50px] lg:w-[60px] h-[50px] lg:h-[60px] rounded-full border border-[#B9B9B9] group-hover:border-[#6B46FF] group-hover:bg-[#6B46FF] flex items-center justify-center  circleBtn overflow-hidden'>
+                                                                        <Image src={ArrowImage} alt='Arrow Image' width={16} height={16} className='group-hover:brightness-[100] group-hover:invert-0 transition-all ease-in-out duration-700' />
+                                                                    </Link>
+                                                                </div>
+                                                            </div> :
+                                                            <div className='flex flex-wrap items-center gap-3 lg:w-11/12'>
+                                                                {cardData.suggestions.map((data, index) => (
+                                                                    <Link href={data.link} key={index} className='bg-white rounded-full w-max py-2 px-5 text-[#646474] text-[14px] sm:text-[18px] font-light'>
+                                                                        {data.text}
+                                                                    </Link>
+                                                                ))}
                                                             </div>
-                                                        </div>
+                                                        }
                                                     </div>
                                                 </div>
                                                 <div className="col-span-12 md:col-span-6"></div>
@@ -172,7 +181,7 @@ const Brand = ({ content }) => {
             {/*  Hiring Part */}
             <motion.section variants={textVariants}
                 initial="initial"
-                whileInView="animate" className='sm:mb-[60px] lg:mb-[120px] lg:w-10/12 mx-auto pt-[30px] sm:pt-[80px] xl:pt-[100px]'>
+                whileInView="animate" className='sm:mb-[60px] lg:mb-[120px] lg:w-10/12 mx-auto pt-[30px] sm:pt-[60px]'>
                 <div className="container">
                     <div className="xl:w-11/12 mx-auto border border-[#E2E2E2] rounded-3xl sm:rounded-full px-4 xl:px-6 py-6 sm:py-3 xl:py-5 flex flex-col gap-y-4 sm:flex-row items-center justify-between">
                         <div className="txt">

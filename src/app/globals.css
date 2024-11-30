@@ -74,6 +74,10 @@ a {
   box-shadow: 0 0px 40px -10px #001f6e14 !important;
 }
 
+.image_shadow {
+  filter: drop-shadow(0px -11px 12px #7581ce23);
+}
+
 .text {
   font-family: consolas;
   animation: textRotation 8s linear infinite;

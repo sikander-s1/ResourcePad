@@ -1,4 +1,4 @@
-import "./globals.css";
+import ConditionalLayout from "./ConditionalLayout";
 
 export const metadata = {
   title: "RecourcPad | Home",
@@ -9,7 +9,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`antialiased`}>
-        {children}
+        <ConditionalLayout>
+          <main>{children}</main>
+        </ConditionalLayout>
       </body>
     </html>
   );

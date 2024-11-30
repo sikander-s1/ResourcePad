@@ -108,7 +108,8 @@ const imageVariants = {
     },
 };
 
-const OurProduct = () => {
+const OurProduct = ({ content }) => {
+    const { join, bgImage } = content;
 
     const products = [
         {
@@ -238,7 +239,34 @@ const OurProduct = () => {
                         </motion.div>
                     </div>
                 </div>
-            </section >
+            </section>
+            {join ?
+                <section className='pt-[50px] sm:pt-[80px] 2xl:pt-[120px] 2xl:pb-[250px] relative bg-black'>
+                    <Image src={bgImage} alt="Bg Shadow" className="absolute top-[-200px] left-[100px] right-0 w-6/12 mx-auto z-[0]" />
+                    <div className="container">
+                        <div className="grid grid-cols-12">
+                            <motion.div className="col-span-12 relative z-[9]" variants={textVariants}
+                                initial="initial"
+                                whileInView="animate">
+                                <motion.h2 variants={textVariants} className='text-[25px] md:text-[45px] lg:text-[55px] leading-[35px] md:leading-[55px] lg:leading-[65px] text-[#fff] font-bold mb-3 text-center lg:mb-8'>Join Us! Optimize customer <br className="lg:block hidden" /> relationships with our CRM.</motion.h2>
+                                <motion.div variants={textVariantsTwo}
+                                    initial="initial"
+                                    whileInView="animate" className='sm:flex items-center justify-center group hidden'>
+                                    <CTA
+                                        text="Hire Now"
+                                        href="#href"
+                                        css="border group-hover:border-[#B9B9B9] bg-[#6B46FF] group-hover:bg-transparent transition-all ease-in-out duration-700 text-white border-[#6B46FF] group-hover:text-white" />
+                                    <div className='overflow-hidden'>
+                                        <motion.a variants={textVariantsTwo} href="#href" className='w-[50px] lg:w-[60px] h-[50px] lg:h-[60px] rounded-full bg-[#6B46FF] flex items-center justify-center group-hover:border-white border border-[#6B46FF] group-hover:bg-transparent circleBtn overflow-hidden'>
+                                            <Image src={ArrowImage2} alt='Arrow Image' width={16} height={16} className='group-hover:brightness-[100] group-hover:invert-0 transition-all ease-in-out duration-700' />
+                                        </motion.a>
+                                    </div>
+                                </motion.div>
+                            </motion.div>
+                        </div>
+                    </div>
+                </section>
+                : null}
             <section className='bg-black relative mb-[40px]'>
                 <div className="absolute left-0 top-[-25px] w-6/12 min-h-[10px] max-h-[10px]">
                     <Image src={SliderShade} alt='shade' className='min-h-[145px] max-h-[145px]' />

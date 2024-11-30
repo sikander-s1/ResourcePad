@@ -8,7 +8,6 @@ import { motion } from "framer-motion";
 // ============== Images
 import ArrowImage from "media/assets/images/arrow.png"
 import bgParticle from "media/assets/images/bg-particle.png"
-import CircleImage from "media/assets/images/circle-button.png"
 import Icon1 from "media/assets/images/icons/icon-1.png"
 import Icon2 from "media/assets/images/icons/icon-2.png"
 import Icon3 from "media/assets/images/icons/icon-3.png"
@@ -57,7 +56,7 @@ const sliderVariants = {
 };
 
 const Banner = ({ content }) => {
-    const { title, desc } = content;
+    const { title, desc, btn, btnText, tabContent } = content;
 
     const textRef = useRef();
 
@@ -109,21 +108,22 @@ const Banner = ({ content }) => {
                         <motion.div variants={textVariants}
                             initial="initial"
                             whileInView="animate" className="txt relative z-[-1]">
-                            <motion.h1 variants={textVariants} className='text-[#202020] text-[30px] sm:text-[40px] md:text-[55px] lg:text-[70px] sm:leading-[50px] md:leading-[65px] lg:leading-[80px] leading-[40px] font-bold text-center mb-4'>{title}</motion.h1>
-                            <p className='text-center text-[#646474] text-[16px] md:text-[22px] leading-[23px] md:leading-[29px] font-normal lg:w-10/12 xl:w-7/12 mx-auto mb-3 lg:mb-0'>{desc}</p>
+                            <motion.h1 variants={textVariants} className='text-[#202020] text-[30px] sm:text-[40px] md:text-[55px] lg:text-[65px] sm:leading-[50px] md:leading-[65px] lg:leading-[75px] leading-[40px] font-bold text-center mb-4'>{title}</motion.h1>
+                            <p className='text-center text-[#646474] text-[16px] md:text-[22px] leading-[23px] md:leading-[29px] font-normal lg:w-10/12 xl:w-8/12 xxl:px-8 mx-auto mb-3 lg:mb-0'>{desc}</p>
                         </motion.div>
                         <motion.div variants={sliderVariants}
                             initial="initial"
                             whileInView="animate" className="flex flex-wrap items-center justify-center gap-5 pt-4 lg:pt-10 relative z-[0]">
-                            <div className='w-full sm:w-auto'>
-                                <CTA
-                                    text="See Our Work"
-                                    href="#href"
-                                    css="border border-[#B9B9B9] hover:bg-[#6B46FF] transition-all ease-in-out duration-700 hover:text-white hover:border-[#6B46FF] " />
-                            </div>
+                            {btn ?
+                                <div className='w-full sm:w-auto'>
+                                    <CTA
+                                        text="See Our Work"
+                                        href="#href"
+                                        css="border border-[#B9B9B9] hover:bg-[#6B46FF] transition-all ease-in-out duration-700 hover:text-white hover:border-[#6B46FF] " />
+                                </div> : null}
                             <div className='flex items-center group overflow-hidden w-full sm:w-auto'>
                                 <CTA
-                                    text="Contact Us!"
+                                    text={btnText}
                                     href="#href"
                                     css="border group-hover:border-[#B9B9B9] bg-[#6B46FF] group-hover:bg-transparent transition-all ease-in-out duration-700 text-white group-hover:text-black border-[#6B46FF] overflow-hidden w-full" />
                                 <div className='sm:block hidden'>
@@ -135,76 +135,46 @@ const Banner = ({ content }) => {
                         </motion.div>
                     </div>
                     <div className="col-span-12">
-                        <Tabs defaultValue="fintech" className="xl:w-9/12 mx-auto">
-                            <TabsList className="mx-auto flex items-center justify-center sm:justify-between relative md:before:content-[''] md:before:absolute md:before:top-[50%] md:before:translate-y-[-50%] md:before:right-[120px] xxl:md:before:right-[150px] md:before:h-[70%] md:before:w-[1px] md:before:bg-[#c3c3c3]">
-                                <TabsTrigger value="fintech">
-                                    <Image src={Icon1} alt='Icon1' className='mb-[10px] md:block hidden mx-auto' />
-                                    <span className='text-[14px] md:text-[16px] lg:text-[18px] text-[#525261] font-normal md:pt-3'>Fintech</span>
-                                </TabsTrigger>
-                                <TabsTrigger value="e-commerce">
-                                    <Image src={Icon2} alt='Icon1' className='mb-[10px] md:block hidden mx-auto' />
-                                    <span className='text-[14px] md:text-[16px] lg:text-[18px] text-[#525261] font-normal md:pt-3'>E-commerce</span>
-                                </TabsTrigger>
-                                <TabsTrigger value="healthcare">
-                                    <Image src={Icon3} alt='Icon1' className='mb-[10px] md:block hidden mx-auto' />
-                                    <span className='text-[14px] md:text-[16px] lg:text-[18px] text-[#525261] font-normal md:pt-3'>Healthcare</span>
-                                </TabsTrigger>
-                                <TabsTrigger value="food">
-                                    <Image src={Icon4} alt='Icon1' className='mb-[10px] md:block hidden mx-auto' />
-                                    <span className='text-[14px] md:text-[16px] lg:text-[18px] text-[#525261] font-normal md:pt-3'>Food</span>
-                                </TabsTrigger>
-                                <TabsTrigger value="automotive">
-                                    <Image src={Icon5} alt='Icon1' className='mb-[10px] md:block hidden mx-auto' />
-                                    <span className='text-[14px] md:text-[16px] lg:text-[18px] text-[#525261] font-normal md:pt-3'>Automotive</span>
-                                </TabsTrigger>
-                                <TabsTrigger value="charity">
-                                    <Image src={Icon6} alt='Icon1' className='mb-[10px] md:block hidden mx-auto' />
-                                    <span className='text-[14px] md:text-[16px] lg:text-[18px] text-[#525261] font-normal md:pt-3'>Charity</span>
-                                </TabsTrigger>
-                                <TabsTrigger className="lg:block hidden">
-                                    <Link href="#href">
-                                        <div className="border border-[#e5e7e5] rounded-full w-[62px] h-[62px] flex items-center justify-center mb-[10px]">
-                                            <Image src={Icon7} alt='Icon1' className='block mx-auto' />
-                                        </div>
-                                        <span className='text-[14px] md:text-[16px] lg:text-[18px] text-[#525261] font-normal md:pt-3'>View All</span>
-                                    </Link>
-                                </TabsTrigger>
+                        <Tabs defaultValue={tabContent[0]?.id} className={`${btn ? 'w-full xl:w-10/12' : 'xl:w-10/12'} mx-auto`}>
+                            <TabsList className={`mx-auto flex items-center justify-center sm:justify-between relative ${btn ? "md:before:content-[''] md:before:absolute md:before:top-[50%] md:before:translate-y-[-50%] md:before:right-[120px] xxl:before:right-[122px] md:before:h-[70%] md:before:w-[1px] md:before:bg-[#c3c3c3]" : ""}`}>
+                                {tabContent.map((item, index) => (
+                                    <div key={index}>
+                                        <TabsTrigger value={item.id} className='group'>
+                                            {btn ?
+                                                <div>
+                                                    <Image src={item.tabIcon} alt='Icon1' className='mb-[10px] md:block hidden mx-auto' />
+                                                </div> :
+                                                <div className='w-[61px] h-[61px] border border-[#CBCBCB] rounded-full hidden md:flex items-center justify-center mb-[10px] group-hover:bg-[#6B46FF] group-hover:duration-700 duration-700 ease-in-out'>
+                                                    <Image src={item.tabIcon} alt='Icon1' className='mx-auto group-hover:brightness-[100] group-hover:duration-700 duration-700 ease-in-out' />
+                                                </div>
+                                            }
+                                            <span className='text-[14px] md:text-[16px] lg:text-[18px] text-[#525261] font-normal md:pt-3'>{item.text}</span>
+                                        </TabsTrigger>
+                                    </div>
+                                ))}
+                                {btn ?
+                                    <div className="lg:block hidden px-2 lg:px-5 py-2">
+                                        <Link href="#href">
+                                            <div className="border border-[#e5e7e5] rounded-full w-[62px] h-[62px] flex items-center justify-center mb-[10px]">
+                                                <Image src={Icon7} alt='Icon1' className='block mx-auto' />
+                                            </div>
+                                            <span className='text-[14px] md:text-[16px] lg:text-[18px] text-[#525261] font-normal md:pt-3'>View All</span>
+                                        </Link>
+                                    </div> : null
+                                }
                             </TabsList>
-                            <TabsContent value="fintech">
-                                <div className="mt-[-30px] sm:mt-[-70px] md:mt-[-100px] lg:mt-[-160px] relative z-[-1]">
-                                    <Image src={tab1} alt='Tab 1' />
-                                </div>
-                            </TabsContent>
-                            <TabsContent value="e-commerce">
-                                <div className="mt-[-30px] sm:mt-[-70px] md:mt-[-100px] lg:mt-[-160px] relative z-[-1]">
-                                    <Image src={tab1} alt='Tab 1' />
-                                </div>
-                            </TabsContent>
-                            <TabsContent value="healthcare">
-                                <div className="mt-[-30px] sm:mt-[-70px] md:mt-[-100px] lg:mt-[-160px] relative z-[-1]">
-                                    <Image src={tab1} alt='Tab 1' />
-                                </div>
-                            </TabsContent>
-                            <TabsContent value="food">
-                                <div className="mt-[-30px] sm:mt-[-70px] md:mt-[-100px] lg:mt-[-160px] relative z-[-1]">
-                                    <Image src={tab1} alt='Tab 1' />
-                                </div>
-                            </TabsContent>
-                            <TabsContent value="automotive">
-                                <div className="mt-[-30px] sm:mt-[-70px] md:mt-[-100px] lg:mt-[-160px] relative z-[-1]">
-                                    <Image src={tab1} alt='Tab 1' />
-                                </div>
-                            </TabsContent>
-                            <TabsContent value="charity">
-                                <div className="mt-[-30px] sm:mt-[-70px] md:mt-[-100px] lg:mt-[-160px] relative z-[-1]">
-                                    <Image src={tab1} alt='Tab 1' />
-                                </div>
-                            </TabsContent>
+                            {tabContent.map((item, index) => (
+                                <TabsContent key={index} value={item.id}>
+                                    <div className={`${btn ? 'mt-[-30px] sm:mt-[-70px] md:mt-[-100px] lg:mt-[-160px]' : 'mt-[-70px] sm:mt-[-130px] md:mt-[-140px] lg:mt-[-230px]'} relative z-[-1]`}>
+                                        <Image src={item.tabImage} alt='Tab 1' />
+                                    </div>
+                                </TabsContent>
+                            ))}
                         </Tabs>
                     </div>
                 </div>
             </div>
-        </section>
+        </section >
     )
 }
 

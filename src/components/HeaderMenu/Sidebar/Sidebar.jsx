@@ -1,12 +1,12 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, useCycle } from "framer-motion";
 import Links from "../links/Link";
 import ToggleButton from "../Toggle/ToggleButton";
 import { useDimensions } from "./useDimension";
 
 const variants = {
-    open: (height = 1000) => ({
-        clipPath: `circle(${height * 2 + 200}px at 40px 40px)`,
+    open: (height = 1200) => ({
+        clipPath: `circle(${height * 2 + 200}px at 50px 50px)`,
         transition: {
             type: "spring",
             stiffness: 20,
@@ -26,13 +26,28 @@ const variants = {
 const Sidebar = () => {
     const [isOpen, toggleOpen] = useCycle(false, true);
     const containerRef = useRef(null);
-    const { height } = useDimensions(containerRef);
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 0) {
+                setIsScrolled(true);
+            } else {
+                setIsScrolled(false);
+            }
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
     return (
-        <motion.div className={`absolute top-0 right-0 bottom-0 h-screen w-full ${isOpen ? 'z-[999999]' : 'z-0'}`} initial={false}
+        <motion.div className={`flex flex-col items-center justify-center bg-black text-white h-full`}
             animate={isOpen ? "open" : "closed"}
-            custom={height}
             ref={containerRef} >
-            <motion.div className={`bg absolute top-0 right-0 bottom-0 bg-black w-full ${isOpen ? 'z-[9999]' : 'z-[-1]'}`} variants={variants}>
+            <motion.div className={`bg z-[999] top-0 left-0 bottom-0 w-full bg-black  ${isScrolled ? "absolute" : "fixed"
+                }`} variants={variants}>
                 <Links />
             </motion.div>
             <ToggleButton toggle={() => toggleOpen()} />
