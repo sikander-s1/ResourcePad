@@ -369,6 +369,13 @@ const ProductCRMInner = () => {
         desc: "When she reached the first hills of the Italic Mountains had a last view back on the skyline.",
         TeamMembersSliders: TeamMembersSliders,
     }
+
+    // ========== Contact Form Start
+    const formContent = {
+        title: "Let's Work Together!",
+        desc: "Partner with us for a digital journey that transforms your business ideas into successful, cutting-edge solutions.",
+        inputs: false
+    }
     return (
         <>
             <Banner content={banenrContent} />
@@ -380,7 +387,7 @@ const ProductCRMInner = () => {
             <TeamMembers content={TeamMembersContent} />
             <Industries />
             <TrendingBlog />
-            <ContactForm />
+            <ContactForm content={formContent}/>
         </>
     )
 }

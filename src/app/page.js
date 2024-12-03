@@ -274,6 +274,13 @@ export default function Home() {
     join: false,
   }
 
+  // ========== Contact Form Start
+  const formContent = {
+    title: "Let's Work Together!",
+    desc: "Partner with us for a digital journey that transforms your business ideas into successful, cutting-edge solutions.",
+    inputs: false
+  }
+
   return (
     <>
       <Banner content={banenrContent} />
@@ -284,7 +291,7 @@ export default function Home() {
       <OurProduct content={ourProduct} />
       <Industries />
       <TrendingBlog />
-      <ContactForm />
+      <ContactForm content={formContent} />
     </>
   );
 }

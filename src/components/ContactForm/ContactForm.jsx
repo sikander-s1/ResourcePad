@@ -64,7 +64,9 @@ const textVariantsTwo = {
     },
 };
 
-const ContactForm = () => {
+const ContactForm = ({ content }) => {
+    const { title, desc, inputs } = content
+
     const [active, setActive] = useState(false)
 
     const services = [
@@ -107,15 +109,24 @@ const ContactForm = () => {
                         <motion.div variants={textVariants}
                             initial="initial"
                             whileInView="animate" className="txt">
-                            <motion.p variants={textVariants} className='text-[20px] sm:text-[30px] xl:text-[40px] xxl:text-[49px] leading-[30px] sm:leading-[40px] xl:leading-tight font-regular text-white opacity-60'>Excited?</motion.p>
+                            <motion.p variants={textVariants} className='text-[20px] sm:text-[30px] xl:text-[40px] xxl:text-[49px] leading-[30px] sm:leading-[40px] xl:leading-tight font-regular text-[#CCCCCC]'>Excited?</motion.p>
                             <motion.div variants={textVariants} className="flex items-center gap-4 lg:gap-8">
-                                <motion.h2 variants={textVariants} className='text-[#886AFF] text-[25px] md:text-[45px] lg:text-[45px] xxl:text-[70px] leading-[35px] md:leading-[55px] xxl:leading-[85px] font-bold mb-[20px] xxl:mb-[10px]'>Let's Work Together!</motion.h2>
-                                <motion.button variants={textVariants} onClick={toggleButton} className="border border-[#444444] w-[50px] lg:w-[70px] h-[50px] lg:h-[70px] rounded-full flex items-center justify-center mt-[-15px] group">
-                                    <Image src={Plus} alt='Plus Icon' className={`group-hover:rotate-45 duration-700 group-hover:duration-700 ease-in-out w-6 lg:w-8 lg:h-8 h-6 ${active ? 'rotate-45' : ''}`} />
-                                </motion.button>
+                                <motion.h2 variants={textVariants} className='text-[#886AFF] text-[25px] md:text-[45px] lg:text-[45px] xxl:text-[70px] leading-[35px] md:leading-[55px] xxl:leading-[85px] font-bold mb-[20px] xxl:mb-[10px]'>{title}</motion.h2>
+                                {inputs ? null :
+                                    <motion.button variants={textVariants} onClick={toggleButton} className="border border-[#444444] w-[50px] lg:w-[70px] h-[50px] lg:h-[70px] rounded-full flex items-center justify-center mt-[-15px] group">
+                                        <Image src={Plus} alt='Plus Icon' className={`group-hover:rotate-45 duration-700 group-hover:duration-700 ease-in-out w-6 lg:w-8 lg:h-8 h-6 ${active ? 'rotate-45' : ''}`} />
+                                    </motion.button>
+                                }
                             </motion.div>
-                            <motion.p variants={textVariants} className='text-white text-[14px] md:text-[16px] lg:text-[20px] leading-[22px] md:leading-[26px] lg:leading-[30px] font-light opacity-80 lg:w-10/12'>Partner with us for a digital journey that transforms your business ideas into
-                                successful, cutting-edge solutions.</motion.p>
+                            <motion.p variants={textVariants} className='text-[#CCCCCC] text-[14px] md:text-[16px] lg:text-[20px] leading-[22px] md:leading-[26px] lg:leading-[30px] font-light lg:w-10/12'>{desc}</motion.p>
+                            {inputs ?
+                                <form className='bg-white/10 h-[65px] rounded-full mt-5 lg:mt-10 flex items-center justify-between lg:w-10/12'>
+                                    <input type="email" placeholder='Email address' className='text-[20px] font-light text-[#9F9FA9] bg-transparent h-full focus:outline-none pl-[30px]' required />
+                                    <button className='text-[20px] text-white font-normal w-[215px] bg-[#6B46FF] h-[65px] rounded-full'>
+                                        Subscribe
+                                    </button>
+                                </form>
+                                : null}
                         </motion.div>
                     </div>
                     <motion.div variants={textVariantsTwo}
