@@ -124,7 +124,7 @@ const OurProduct = ({ content }) => {
                     }
                 });
             },
-            { threshold: 1 } // Adjust threshold as needed
+            { threshold: 0.5 }
         );
 
         itemRefs.current.forEach((ref) => ref && observer.observe(ref));
@@ -191,7 +191,7 @@ const OurProduct = ({ content }) => {
                         <motion.div variants={imageVariants}
                             initial="initial"
                             whileInView="animate" className="col-span-12 lg:col-span-5 xl:col-span-6 lg:block hidden">
-                            <motion.div
+                            {/* <motion.div
                                 variants={imageVariants}
                                 className="sticky top-[100px]">
                                 {activeIndex !== null && (
@@ -209,6 +209,41 @@ const OurProduct = ({ content }) => {
                                                 className="mx-auto"
                                             />
                                         </>
+                                )}
+                            </motion.div> */}
+                            <motion.div variants={imageVariants} initial="initial" whileInView="animate" className="sticky top-[100px]">
+                                {activeIndex !== null && (
+                                    isContent ? (
+                                        <motion.div
+                                            key={`content-${activeIndex}`}
+                                            initial={{ opacity: 0, scale: 0.9 }}
+                                            animate={{ opacity: 1, scale: 1 }}
+                                            exit={{ opacity: 0, scale: 0.9 }}
+                                            transition={{ duration: 0.5 }}
+                                            className="card xl:w-11/12 2xl:w-10/12 ml-auto"
+                                        >
+                                            <h3 className='text-white text-[40px] 2xl:text-[55px] leading-[45px] 2xl:leading-[60px] font-bold mb-3 lg:mb-4 2xl:mb-6'>
+                                                {product[activeIndex].subTitle}
+                                            </h3>
+                                            <p className='text-white opacity-70 text-[20px] leading-[30px] font-light xl:pr-8'>
+                                                {product[activeIndex].subDesc}
+                                            </p>
+                                        </motion.div>
+                                    ) : (
+                                        <motion.div
+                                            key={`image-${activeIndex}`}
+                                            initial={{ opacity: 0, scale: 0.9 }}
+                                            animate={{ opacity: 1, scale: 1 }}
+                                            exit={{ opacity: 0, scale: 0.9 }}
+                                            transition={{ duration: 0.5 }}
+                                        >
+                                            <Image
+                                                src={product[activeIndex].image}
+                                                alt={`Image of ${product[activeIndex].title}`}
+                                                className="mx-auto"
+                                            />
+                                        </motion.div>
+                                    )
                                 )}
                             </motion.div>
                         </motion.div>

@@ -16,7 +16,7 @@ const ToggleButton = ({ toggle }) => {
         };
     }, []);
     return (
-        <button onClick={toggle} className="outline-none border-0 cursor-pointer absolute top-[17px] md:top-[15px] lg:top-[16px] right-[30px] sm:right-[41px] md:right-[52px] xl:right-[48px] 3xl:right-[90px] w-[50px] h-[50px] rounded-full bg-transparent flex items-center justify-center z-[9999] !bg-black ">
+        <button onClick={toggle} className="outline-none border-0 cursor-pointer absolute top-[-30px] lg:top-[3px] right-[20px] lg:right-[-20px] w-[50px] h-[50px] rounded-full bg-transparent flex items-center justify-center z-[9999] !bg-black ">
             <svg width="23" height="23" viewBox="0 0 23 23">
                 <motion.path
                     strokeWidth="3"

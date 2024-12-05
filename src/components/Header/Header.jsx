@@ -91,7 +91,7 @@ const Dropdown = ({ text }) => {
 const Header = () => {
 
     return (
-        <motion.header variants={textVariants} initial="initial" animate="animate" className={`sm:pt-4 bg-white h-[90px] shadow-lg relative z-10 flex items-center lg:items-start lg:justify-start justify-center`}>
+        <motion.header variants={textVariants} initial="initial" animate="animate" className={`sm:pt-4 bg-white h-[90px] shadow-lg flex items-center lg:items-start lg:justify-start justify-center relative z-10`}>
             <div className="container">
                 <div className="grid grid-cols-12 items-center">
                     <div className="col-span-6 sm:col-span-3 lg:col-span-2">
@@ -101,7 +101,7 @@ const Header = () => {
                             </Link>
                         </div>
                     </div>
-                    <div className="sm:block hidden sm:col-span-5 md:col-span-7">
+                    <div className="sm:block hidden sm:col-span-6 lg:col-span-7">
                         <ul className="lists items-center justify-center gap-x-3 lg:gap-x-8 md:flex hidden">
                             <li>
                                 <Link href="#href" className='text-[16px] lg:text-[18px] leading-[28px] text-[#292D49] font-medium'>
@@ -122,7 +122,7 @@ const Header = () => {
                         </ul>
                     </div>
                     <div className="col-span-6 sm:col-span-3 lg:col-span-3">
-                        <div className="flex items-center justify-end lg:justify-center 2xl:justify-end gap-2 lg:gap-4">
+                        <div className="flex items-center justify-end lg:justify-center 2xl:justify-end gap-2 lg:gap-4 relative z-0">
                             <div className='lg:block hidden'>
                                 <CTA text="Start a Project" href="#href" css="border border-[#B9B9B9] hover:bg-[#000] transition-all ease-in-out duration-700 hover:text-white hover:border-[#000] mr-[25px]" />
                             </div>
