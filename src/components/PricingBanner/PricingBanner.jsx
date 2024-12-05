@@ -111,7 +111,7 @@ const PricingBanner = ({ content }) => {
                                             aria-selected={activeTab === tab.index}
                                             className={`${isPrice ? 'px-4 lg:px-8 xl:px-14' : 'w-full flex items-center justify-center px-4 lg:px-8'} cursor-pointer py-2 flex items-center gap-x-3 text-[14px] sm:text-[16px] xl:text-[20px] leading-[20px] sm:leading-[25px] xl:leading-[30px] h-full duration-700 ease-in-out text-center border rounded-full w-full sm:w-max ${activeTab === tab.index
                                                 ? 'bg-[#6B46FF] rounded-full text-white font-normal'
-                                                : 'text-[#202020] border-[#C3CAC9] opacity-60 font-semibold'
+                                                : 'text-[#202020] border-[#C3CAC9] sm:border-0 opacity-60 font-semibold'
                                                 }`}
                                             onClick={() => handleTabClick(tab.index)}
                                         >
