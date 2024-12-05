@@ -42,7 +42,7 @@ const Dropdown = ({ text }) => {
 
     return (
         <div className="relative inline-block text-left" onMouseEnter={openDropdown} onMouseLeave={closeDropdown}>
-            <button className="text-[16px] lg:text-[18px] leading-[23px] text-[#292D49] font-medium focus:outline-none flex items-center gap-x-2">
+            <button className="text-[16px] lg:text-[18px] leading-[28px] text-[#292D49] font-medium relative before:content-[''] before:absolute before:bottom-[-5px] before:left-0 before:w-0 before:z-[-1] before:h-[3px] before:bg-[#6B46FF] before:rounded-full hover:before:w-full hover:before:duration-700 duration-700 ease-in-out hover:text-[#6B46FF] focus:outline-none flex items-center gap-x-2">
                 {text}
                 <Image src={NavArrow} alt='Arrow' width={10} height={10} className={`transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
             </button>
@@ -104,7 +104,7 @@ const Header = () => {
                     <div className="sm:block hidden sm:col-span-6 lg:col-span-7">
                         <ul className="lists items-center justify-center gap-x-3 lg:gap-x-8 md:flex hidden">
                             <li>
-                                <Link href="#href" className='text-[16px] lg:text-[18px] leading-[28px] text-[#292D49] font-medium'>
+                                <Link href="#href" className="text-[16px] lg:text-[18px] leading-[28px] text-[#292D49] font-medium relative before:content-[''] before:absolute before:bottom-[-5px] before:left-0 before:w-0 before:z-[-1] before:h-[3px] before:bg-[#6B46FF] before:rounded-full hover:before:w-full hover:before:duration-700 duration-700 ease-in-out hover:text-[#6B46FF]">
                                     About
                                 </Link>
                             </li>
@@ -115,7 +115,7 @@ const Header = () => {
                                 <Dropdown text="Products" />
                             </li>
                             <li>
-                                <Link href="#href" className='text-[16px] lg:text-[18px] leading-[28px] text-[#292D49] font-medium'>
+                                <Link href="#href" className="text-[16px] lg:text-[18px] leading-[28px] text-[#292D49] font-medium relative before:content-[''] before:absolute before:bottom-[-5px] before:left-0 before:w-0 before:z-[-1] before:h-[3px] before:bg-[#6B46FF] before:rounded-full hover:before:w-full hover:before:duration-700 duration-700 ease-in-out hover:text-[#6B46FF]">
                                     Contact
                                 </Link>
                             </li>
