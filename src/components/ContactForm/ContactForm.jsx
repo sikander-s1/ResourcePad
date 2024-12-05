@@ -128,16 +128,12 @@ const ContactForm = ({ content }) => {
                                 : null}
                         </motion.div>
                     </div>
-                    <motion.div variants={textVariantsTwo}
-                        initial="initial"
-                        whileInView="animate" className="col-span-12 lg:col-span-5 lg:block hidden">
+                    <motion.div variants={textVariantsTwo} initial="initial" whileInView="animate" className="col-span-12 lg:col-span-5 lg:block hidden">
                         <Image src={ContactImage} alt='Laptop Image' className='w-10/12 ml-auto mr-auto 2xl:mr-0' />
                     </motion.div>
                 </div>
                 {active ?
-                    <motion.div variants={textVariantsTwo}
-                        initial="initial"
-                        whileInView="animate" className={`grid grid-cols-12 gap-y-6 pt-[60px] lg:pt-[90px] xl:pt-[150px] pb-[50px] xl:pb-[90px]`}>
+                    <motion.div variants={textVariantsTwo} initial="initial" whileInView="animate" className={`grid grid-cols-12 gap-y-6 pt-[60px] lg:pt-[90px] xl:pt-[150px] pb-[50px] xl:pb-[90px]`}>
                         <motion.div variants={textVariantsTwo} className="col-span-12 lg:col-span-5 xxl:col-span-4">
                             <motion.div variants={textVariantsTwo} className="services">
                                 <motion.h6 variants={textVariantsTwo} className='text-[20px] md:text-[30px] leading-[30px] md:leading-[40px] font-semibold text-white mb-[15px]'>

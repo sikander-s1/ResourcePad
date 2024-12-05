@@ -4,8 +4,6 @@ import Image from 'next/image';
 import { motion } from "framer-motion";
 // Images
 import ArrowImage from "media/arrow.png"
-import Icon1 from "media/icons/tab-icon1.png";
-import Icon2 from "media/icons/tab-icon2.png";
 import Arrow from "media/icons/arrow.png";
 import Phone from "media/icons/phone-call.png";
 import ArrowTwo from "media/icons/color-arrow.png";
@@ -13,6 +11,50 @@ import PhoneTwo from "media/icons/color-phone.png";
 import Shade1 from "media/price-shade1.png"
 import Shade2 from "media/price-shade2.png"
 import BgImage from "media/bg-particle.png"
+
+const textVariants = {
+    initial: {
+        y: -100,
+        opacity: 0,
+    },
+    animate: {
+        y: 0,
+        opacity: 1,
+        transition: {
+            duration: 1,
+            staggerChildren: 0.1,
+        },
+    },
+    scrollButton: {
+        opacity: 0,
+        y: 10,
+        transition: {
+            duration: 2,
+            repeat: Infinity,
+        },
+    },
+};
+
+const textVariantsTwo = {
+    initial: {
+        opacity: 0,
+    },
+    animate: {
+        opacity: 1,
+        transition: {
+            duration: 2,
+            staggerChildren: 0.2,
+        },
+    },
+    scrollButton: {
+        opacity: 0,
+        y: 10,
+        transition: {
+            duration: 2,
+            repeat: Infinity,
+        },
+    },
+};
 
 const PricingBanner = ({ content }) => {
     const { title, desc, isPrice, tabInfo, tabContents } = content;
@@ -59,9 +101,7 @@ const PricingBanner = ({ content }) => {
                 <div className="grid grid-cols-12">
                     <div className="col-span-12 text-center">
                         {isPrice ? null :
-                            <motion.div
-                                initial={{ scale: 0 }}
-                                whileInView={{ scale: 1 }}
+                            <motion.div initial={{ scale: 0 }} whileInView={{ scale: 1 }}
                                 transition={{
                                     duration: 1,
                                     staggerChildren: 0.1,
@@ -79,16 +119,18 @@ const PricingBanner = ({ content }) => {
                                     </p>
                                 </div>
                             </motion.div>}
-                        {isPrice ?
-                            <p className="flex justify-center items-center bg-[#F4F1FF] mx-auto mb-2 sm:mb-6 rounded-full w-[120px] h-[45px] font-semibold text-[#6B46FF] text-[18px] leading-[28px]">
-                                PRICING
-                            </p> : null}
-                        <h1 className="mb-4 font-bold text-[#202020] text-[30px] sm:text-[40px] md:text-[55px] lg:text-[65px] leading-[40px] sm:leading-[50px] md:leading-[65px] lg:leading-[75px]">
-                            {title}
-                        </h1>
-                        <p className="mx-auto mb-5 sm:mb-10 lg:mb-20 lg:w-10/12 xl:w-9/12 font-normal text-[#646474] text-[16px] md:text-[22px] leading-[23px] md:leading-[29px]">
-                            {desc}
-                        </p>
+                        <motion.div variants={textVariants} initial="initial" whileInView="animate" className="txt">
+                            {isPrice ?
+                                <motion.p variants={textVariants} className="flex justify-center items-center bg-[#F4F1FF] mx-auto mb-2 sm:mb-6 rounded-full w-[120px] h-[45px] font-semibold text-[#6B46FF] text-[18px] leading-[28px]">
+                                    PRICING
+                                </motion.p> : null}
+                            <motion.h1 variants={textVariants} className="mb-4 font-bold text-[#202020] text-[30px] sm:text-[40px] md:text-[55px] lg:text-[65px] leading-[40px] sm:leading-[50px] md:leading-[65px] lg:leading-[75px]">
+                                {title}
+                            </motion.h1>
+                            <motion.p variants={textVariants} className="mx-auto mb-5 sm:mb-10 lg:mb-20 lg:w-10/12 xl:w-9/12 font-normal text-[#646474] text-[16px] md:text-[22px] leading-[23px] md:leading-[29px]">
+                                {desc}
+                            </motion.p>
+                        </motion.div>
                     </div>
 
                     {/* Tabs Navigation */}
@@ -105,20 +147,12 @@ const PricingBanner = ({ content }) => {
                             <div className="col-span-10 sm:col-span-11 md:col-span-9 lg:col-span-8">
                                 <ul className={`flex flex-wrap justify-between items-center gap-4 border-[#C3CAC9] mb-6 sm:border rounded-full h-[45px] sm:h-[50px] md:h-[60px] lg:h-[65px]`}>
                                     {tabInfo.map((tab) => (
-                                        <li
-                                            key={tab.index}
-                                            role="tab"
-                                            aria-selected={activeTab === tab.index}
+                                        <li key={tab.index} role="tab" aria-selected={activeTab === tab.index}
                                             className={`${isPrice ? 'px-4 lg:px-8 xl:px-14' : 'w-full flex items-center justify-center px-4 lg:px-8'} cursor-pointer py-2 flex items-center gap-x-3 text-[14px] sm:text-[16px] xl:text-[20px] leading-[20px] sm:leading-[25px] xl:leading-[30px] h-full duration-700 ease-in-out text-center border rounded-full w-full sm:w-max ${activeTab === tab.index
                                                 ? 'bg-[#6B46FF] rounded-full text-white font-normal'
                                                 : 'text-[#202020] border-[#C3CAC9] sm:border-0 opacity-60 font-semibold'
-                                                }`}
-                                            onClick={() => handleTabClick(tab.index)}
-                                        >
-                                            <Image src={tab.icon} alt="Icon" className={`lg:block hidden ${activeTab === tab.index
-                                                ? 'brightness-[100]'
-                                                : ''
-                                                }`} />
+                                                }`} onClick={() => handleTabClick(tab.index)}>
+                                            <Image src={tab.icon} alt="Icon" className={`lg:block hidden ${activeTab === tab.index ? 'brightness-[100]' : ''}`} />
                                             {tab.label}
                                         </li>
                                     ))}
@@ -129,12 +163,12 @@ const PricingBanner = ({ content }) => {
 
                     {/* Tab Content */}
                     <div className="col-span-12">
-                        <div className="mt-[70px] sm:mt-5 lg:mt-8 tab_content">
+                        <motion.div variants={textVariantsTwo} initial="initial" whileInView="animate" className="mt-[70px] sm:mt-5 lg:mt-8 tab_content">
                             {isPrice ?
                                 (
                                     tabContents[activeTab]?.productList && (
                                         <div className="gap-x-4 lg:gap-x-7 gap-y-5 grid grid-cols-12">
-                                            <div className="col-span-12 lg:col-span-3">
+                                            <motion.div variants={textVariantsTwo} className="col-span-12 lg:col-span-3">
                                                 <div className="border-[#E2E2E2] px-4 xxl:px-7 py-14 border rounded-[20px] h-full product_list">
                                                     <h3 className="mb-5 xl:mb-10 font-bold text-[#202020] text-[25px] xl:text-[30px] leading-[30px] xl:leading-[35px]">
                                                         Products List
@@ -151,8 +185,8 @@ const PricingBanner = ({ content }) => {
                                                         ))}
                                                     </ul>
                                                 </div>
-                                            </div>
-                                            <div className="col-span-12 lg:col-span-9">
+                                            </motion.div>
+                                            <motion.div variants={textVariantsTwo} className="col-span-12 lg:col-span-9">
                                                 <div className="gap-y-5 md:gap-x-4 lg:gap-x-7 grid grid-cols-12">
                                                     {tabContents[activeTab].pricingCards.map((priceData, index) => (
                                                         <div className="col-span-12 md:col-span-6" key={index}>
@@ -192,24 +226,24 @@ const PricingBanner = ({ content }) => {
                                                                     </p>
                                                                     {priceData.isBtn ?
                                                                         <>
-                                                                            <div className="flex items-center">
-                                                                                <Link href="#href" className='flex justify-center items-center gap-x-3 bg-[#6B46FF] rounded-full w-full h-[65px] font-normal text-[18px] text-white leading-[25px]'>
-                                                                                    <Image src={Phone} alt='Phone' />
+                                                                            <div className="flex items-center group overflow-hidden">
+                                                                                <Link href="#href" className='flex justify-center items-center gap-x-3 bg-[#6B46FF] rounded-full w-full h-[65px] font-normal text-[18px] text-white leading-[25px] group-hover:duration-700 ease-in-out duration-700 group-hover:bg-transparent group-hover:border-[#B9B9B9] border group-hover:text-black'>
+                                                                                    <Image src={Phone} alt='Phone' className='group-hover:invert-[1] group-hover:duration-700 duration-700 ease-in-out' />
                                                                                     Talk to Sales
                                                                                 </Link>
-                                                                                <Link href='#href' className='sm:flex justify-center items-center bg-[#6B46FF] rounded-full w-[75px] h-[65px] hidden'>
-                                                                                    <Image src={ArrowTwo} alt='Arrow' className='brightness-[100]' />
+                                                                                <Link href='#href' className='sm:flex justify-center items-center bg-[#6B46FF] rounded-full w-[75px] h-[65px] hidden overflow-hidden circleBtn group-hover:duration-700 ease-in-out duration-700 group-hover:bg-transparent group-hover:border-[#B9B9B9] border'>
+                                                                                    <Image src={ArrowTwo} alt='Arrow' className='brightness-[100] group-hover:invert-[1] group-hover:duration-700 duration-700 ease-in-out' />
                                                                                 </Link>
                                                                             </div>
                                                                         </> :
                                                                         <>
-                                                                            <div className="flex items-center">
-                                                                                <Link href="#href" className='flex justify-center items-center gap-x-3 border-[#D8D8D8] bg-transparent border rounded-full w-full h-[65px] font-semibold text-[#6B46FF] text-[18px] leading-[25px]'>
-                                                                                    <Image src={PhoneTwo} alt='Phone' />
+                                                                            <div className="flex items-center group">
+                                                                                <Link href="#href" className='flex justify-center items-center gap-x-3 border-[#D8D8D8] bg-transparent border rounded-full w-full h-[65px] font-semibold group-hover:bg-[#6B46FF] text-[#6B46FF] text-[18px] leading-[25px]  group-hover:text-white group-hover:duration-700 ease-in-out duration-700 '>
+                                                                                    <Image src={PhoneTwo} alt='Phone' className='group-hover:brightness-[100] group-hover:duration-700 duration-700 ease-in-out'/>
                                                                                     Talk to Sales
                                                                                 </Link>
-                                                                                <Link href='#href' className='hidden sm:flex justify-center items-center border-[#D8D8D8] bg-transparent border rounded-full w-[75px] h-[65px]'>
-                                                                                    <Image src={ArrowTwo} alt='Arrow' className='' />
+                                                                                <Link href='#href' className='hidden sm:flex justify-center items-center border-[#D8D8D8] bg-transparent group-hover:bg-[#6B46FF] border rounded-full w-[75px] h-[65px] group-hover:duration-700 ease-in-out duration-700 overflow-hidden circleBtn'>
+                                                                                    <Image src={ArrowTwo} alt='Arrow' className='group-hover:brightness-[100] group-hover:duration-700 duration-700 ease-in-out' />
                                                                                 </Link>
                                                                             </div>
                                                                         </>}
@@ -218,7 +252,7 @@ const PricingBanner = ({ content }) => {
                                                         </div>
                                                     ))}
                                                 </div>
-                                            </div>
+                                            </motion.div>
                                         </div>
                                     )
                                 ) :
@@ -227,13 +261,13 @@ const PricingBanner = ({ content }) => {
                                         <div>
                                             {tabContents[activeTab].map((item, index) => (
                                                 <div key={index}>
-                                                    <div className="gap-x-7 grid grid-cols-12 pt-[40px] sm:pt-0 xl:pt-[80px]">
+                                                    <motion.div variants={textVariantsTwo} className="gap-x-7 grid grid-cols-12 pt-[40px] sm:pt-0 xl:pt-[80px]">
                                                         <div className="col-span-12">
                                                             <h2 className='text-[#202020] text-[30px] sm:text-[45px] lg:text-[55px] leading-[40px] sm:leading-[55px] lg:leading-[65px] font-bold'>{item.subTitle}</h2>
                                                             <p className='text-[#646474] text-[16px] xl:text-[20px] leading-[25px] xl:leading-[30px] font-light mb-4 lg:mb-12'>{item.subDesc}</p>
                                                         </div>
-                                                    </div>
-                                                    <div className={`grid ${item.css} gap-4`}>
+                                                    </motion.div>
+                                                    <motion.div variants={textVariantsTwo} className={`grid ${item.css} gap-4`}>
                                                         {item.isBlog ?
                                                             (item.blogs && item.blogs.map((blog, index) => (
                                                                 <div key={index}>
@@ -256,14 +290,14 @@ const PricingBanner = ({ content }) => {
                                                                 View More
                                                             </Link>
                                                         </div>
-                                                    </div>
+                                                    </motion.div>
                                                 </div>
                                             ))}
                                         </div>
                                     )
                                 )
                             }
-                        </div>
+                        </motion.div>
                     </div>
                 </div>
             </div>

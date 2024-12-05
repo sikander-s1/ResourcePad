@@ -7,6 +7,50 @@ import Plus from "media/icons/plus.png";
 import Minus from "media/icons/minus.png";
 import Slider from "media/faqs-shade.png";
 
+const textVariants = {
+    initial: {
+        y: -100,
+        opacity: 0,
+    },
+    animate: {
+        y: 0,
+        opacity: 1,
+        transition: {
+            duration: 1,
+            staggerChildren: 0.1,
+        },
+    },
+    scrollButton: {
+        opacity: 0,
+        y: 10,
+        transition: {
+            duration: 2,
+            repeat: Infinity,
+        },
+    },
+};
+
+const textVariantsTwo = {
+    initial: {
+        opacity: 0,
+    },
+    animate: {
+        opacity: 1,
+        transition: {
+            duration: 2,
+            staggerChildren: 0.2,
+        },
+    },
+    scrollButton: {
+        opacity: 0,
+        y: 10,
+        transition: {
+            duration: 2,
+            repeat: Infinity,
+        },
+    },
+};
+
 const Faqs = ({ content }) => {
     const { accordionData, isprice } = content;
 
@@ -23,14 +67,16 @@ const Faqs = ({ content }) => {
             </div>
             <div className="container">
                 <div className="grid grid-cols-12">
-                    <div className="col-span-12">
-                        <h2 className='text-[25px] md:text-[45px] lg:text-[55px] leading-[35px] md:leading-[55px] lg:leading-[65px] text-[#202020] font-bold mb-5 md:mb-8 xl:mb-12 text-center'>Frequently Asked Questions</h2>
-                    </div>
+                    <motion.div variants={textVariants}
+                        initial="initial"
+                        whileInView="animate" className="col-span-12">
+                        <motion.h2 variants={textVariants} className='text-[25px] md:text-[45px] lg:text-[55px] leading-[35px] md:leading-[55px] lg:leading-[65px] text-[#202020] font-bold mb-5 md:mb-8 xl:mb-12 text-center'>Frequently Asked Questions</motion.h2>
+                    </motion.div>
                 </div>
                 <div className="grid grid-cols-12">
                     <div className="col-span-12">
                         {accordionData.map((item, index) => (
-                            <div key={index} className={`border mb-3 lg:mb-[15px] xl:mb-[24px] rounded-[16px] shadow-[0_0px_8px_0px_rgba(0,0,0,0.07)] bg-white`}>
+                            <motion.div variants={textVariantsTwo} initial="initial" whileInView="animate" key={index} className={`border mb-3 lg:mb-[15px] xl:mb-[24px] rounded-[16px] shadow-[0_0px_8px_0px_rgba(0,0,0,0.07)] bg-white`}>
                                 <div className="flex justify-between items-start md:items-center cursor-pointer px-4 py-5" onClick={() => handleClick(index)}>
                                     <div className="flex items-center lg:items-start gap-x-5">
                                         {isprice ?
@@ -66,7 +112,7 @@ const Faqs = ({ content }) => {
                                         )}
                                     </span>
                                 </div>
-                            </div>
+                            </motion.div>
                         ))}
                     </div>
                 </div>
