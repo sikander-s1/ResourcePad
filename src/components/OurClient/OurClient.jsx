@@ -80,7 +80,7 @@ const OurClient = ({ content }) => {
                     <div className="col-span-12">
                         <motion.div variants={textVariants}
                             initial="initial"
-                            whileInView="animate" className="txt mb-4 md:mb-10 xxl:mb-16">
+                            whileInView="animate" className="txt xl:text-left text-center mb-4 md:mb-10 xxl:mb-16">
                             <motion.h2 variants={textVariants} className='text-[25px] md:text-[45px] lg:text-[55px] leading-[35px] md:leading-[55px] lg:leading-[65px] text-[#202020] font-bold mb-1 xxl:mb-3'>{title}</motion.h2>
                             <motion.p variants={textVariants} className='text-[#646474] text-[14px] md:text-[16px] lg:text-[20px] leading-[22px] md:leading-[26px] lg:leading-[30px] mb-4 lg:mb-8'>{desc}</motion.p>
                         </motion.div>

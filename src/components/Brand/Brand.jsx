@@ -141,12 +141,12 @@ const Brand = ({ content }) => {
                                             <Image src={cardData.image} alt='Background Image' fill={true} className='object-cover object-center z-[-1] rounded-[20px]' />
                                             <div className="grid grid-cols-12">
                                                 <div className={`col-span-12 ${btn ? 'md:col-span-6' : 'lg:col-span-7 xl:col-span-6'}`}>
-                                                    <div className='pl-[20px] sm:pl-[40px] lg:pl-[60px] pr-[20px] sm:pr-[40px] md:pr-0'>
+                                                    <div className='pl-[20px] sm:pl-[25px] md:pl-[40px] lg:pl-[60px] pr-[20px] sm:pr-[25px] md:pr-[40px] lg:pr-0'>
                                                         <div className="number">
                                                             <span className='text-[#2020204b] text-[35px] leading-[40px] font-semibold mb-[20px] lg:mb-[60px] block'>{cardData.order}</span>
                                                         </div>
-                                                        <h3 className='text-[22px] sm:text-[30px] lg:text-[40px] leading-[32px] sm:leading-[40px] lg:leading-[45px] text-[#202020] font-bold mb-3 lg:mb-6'>{cardData.title}</h3>
-                                                        <p className={`text-[#646474] text-[15px] leading-[22px] font-normal mb-[25px] sm:mb-[35px] ${btn ? "lg:w-10/12 lg:text-[19px] lg:leading-[25px]" : "lg:text-[18px] lg:leading-[25px] lg:pr-[2px]"}`}>{cardData.description}</p>
+                                                        <h3 className='text-[18px] sm:text-[30px] lg:text-[40px] leading-[25px] sm:leading-[40px] lg:leading-[45px] text-[#202020] font-bold mb-1 sm:mb-3 lg:mb-6'>{cardData.title}</h3>
+                                                        <p className={`text-[#646474] text-[13px] sm:text-[15px] leading-[20px] sm:leading-[22px] font-normal mb-[15px] sm:mb-[35px] ${btn ? "lg:w-10/12 lg:text-[19px] lg:leading-[25px]" : "lg:text-[18px] lg:leading-[25px] lg:pr-[2px]"}`}>{cardData.description}</p>
                                                         {btn ?
                                                             <div className='flex items-center group overflow-hidden'>
                                                                 <CTA
@@ -159,9 +159,9 @@ const Brand = ({ content }) => {
                                                                     </Link>
                                                                 </div>
                                                             </div> :
-                                                            <div className='flex flex-wrap items-center gap-3 lg:w-11/12'>
+                                                            <div className='flex flex-wrap items-center gap-2 sm:gap-3 xl:w-11/12'>
                                                                 {cardData.suggestions.map((data, index) => (
-                                                                    <Link href={data.link} key={index} className='bg-white rounded-full w-max py-2 px-5 text-[#646474] text-[14px] sm:text-[18px] font-light'>
+                                                                    <Link href={data.link} key={index} className='bg-white rounded-full w-max py-1 sm:py-2 px-3 sm:px-5 text-[#646474] text-[14px] sm:text-[16px] md:text-[18px] font-light'>
                                                                         {data.text}
                                                                     </Link>
                                                                 ))}
@@ -196,7 +196,7 @@ const Brand = ({ content }) => {
                 <div className="container">
                     <div className="xl:w-11/12 mx-auto border border-[#E2E2E2] rounded-3xl sm:rounded-full px-4 xl:px-6 py-6 sm:py-3 xl:py-5 flex flex-col gap-y-4 sm:flex-row items-center justify-between">
                         <div className="txt">
-                            <h6 className='text-[#202020] text-[20px] lg:text-[25px] 2xl:text-[35px] font-semibold sm:text-left text-center'>{hireTitle}</h6>
+                            <h6 className='text-[#202020] text-[16px] md:text-[18px] lg:text-[25px] 2xl:text-[35px] font-semibold sm:text-left text-center'>{hireTitle}</h6>
                         </div>
                         <div className='flex items-center justify-end group overflow-hidden w-6/12 sm:w-4/12 xxl:w-3/12'>
                             <CTA

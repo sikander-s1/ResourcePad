@@ -111,41 +111,6 @@ const imageVariants = {
 const OurProduct = ({ content }) => {
     const { join, bgImage, product, isTitle, isContent, isHire, joinTitle, joinDesc } = content;
 
-    // const products = [
-    //     {
-    //         number: "01",
-    //         title: "Ideate",
-    //         desc: "We analyze your vision thoroughly to ensure the roadmap is perfectly aligned with your end goals, setting the stage for product success.",
-    //         image: ProductImage
-    //     },
-    //     {
-    //         number: "02",
-    //         title: "Design",
-    //         desc: "We analyze your vision thoroughly to ensure the roadmap is perfectly aligned with your end goals, setting the stage for product success.",
-    //         image: ProductImageTwo
-    //     },
-    //     {
-    //         number: "03", title: "Develop",
-    //         desc: "We analyze your vision thoroughly to ensure the roadmap is perfectly aligned with your end goals, setting the stage for product success.",
-    //         image: ProductImageThree
-    //     },
-    //     {
-    //         number: "04", title: "Test",
-    //         desc: "We analyze your vision thoroughly to ensure the roadmap is perfectly aligned with your end goals, setting the stage for product success.",
-    //         image: ProductImageFour
-    //     },
-    //     {
-    //         number: "05", title: "Launch",
-    //         desc: "We analyze your vision thoroughly to ensure the roadmap is perfectly aligned with your end goals, setting the stage for product success.",
-    //         image: ProductImageFive
-    //     },
-    //     {
-    //         number: "06", title: "Support",
-    //         desc: "We analyze your vision thoroughly to ensure the roadmap is perfectly aligned with your end goals, setting the stage for product success.",
-    //         image: ProductImageSix
-    //     },
-    // ];
-
     const [activeIndex, setActiveIndex] = useState(0);
     const itemRefs = useRef([]);
 
@@ -209,13 +174,13 @@ const OurProduct = ({ content }) => {
                                             key={index}
                                             data-index={index}
                                             ref={(el) => (itemRefs.current[index] = el)}
-                                            className={`flex items-start gap-6 lg:gap-10 mb-[40px] lg:mb-[120px] ${activeIndex === index ? "opacity-100 text-white" : "opacity-50 text-gray-500"
+                                            className={`flex items-start gap-6 2xl:gap-10 mb-[40px] lg:mb-[120px] ${activeIndex === index ? "opacity-100 text-white" : "opacity-50 text-gray-500"
                                                 }`}>
                                             <div className="number sm:block hidden">
-                                                <p className="text-[50px] lg:text-[70px] leading-[60px] lg:leading-normal font-semibold">{content.number}</p>
+                                                <p className="text-[50px] 2xl:text-[70px] leading-[55px] 2xl:leading-normal font-semibold">{content.number}</p>
                                             </div>
                                             <div className="txt text-center sm:text-start">
-                                                <h3 className=" text-[22px] sm:text-[35px] lg:text-[45px] font-semibold lg:mb-[10px]">{content.title}</h3>
+                                                <h3 className=" text-[22px] sm:text-[35px] 2xl:text-[45px] font-semibold xl:mb-[10px]">{content.title}</h3>
                                                 <p className="text-[14px] sm:text-[16px] xl:text-[18px] leading-[25px] xl:leading-[27px] font-light lg:w-9/12">{content.desc}</p>
                                             </div>
                                         </motion.li>
@@ -232,9 +197,9 @@ const OurProduct = ({ content }) => {
                                 {activeIndex !== null && (
                                     isContent ?
                                         <>
-                                            <div className="card lg:w-10/12 ml-auto">
-                                                <h3 className='text-white text-[55px] leading-[60px] font-bold mb-3 lg:mb-6'>{product[activeIndex].subTitle}</h3>
-                                                <p className='text-white opacity-70 text-[20px] leading-[30px] font-light lg:pr-8'>{product[activeIndex].subDesc}</p>
+                                            <div className="card xl:w-11/12 2xl:w-10/12 ml-auto">
+                                                <h3 className='text-white text-[40px] 2xl:text-[55px] leading-[45px] 2xl:leading-[60px] font-bold mb-3 lg:mb-4 2xl:mb-6'>{product[activeIndex].subTitle}</h3>
+                                                <p className='text-white opacity-70 text-[20px] leading-[30px] font-light xl:pr-8'>{product[activeIndex].subDesc}</p>
                                             </div>
                                         </> :
                                         <>
@@ -251,15 +216,15 @@ const OurProduct = ({ content }) => {
                 </div>
             </section>
             {join ?
-                <section className='pt-[50px] sm:pt-[80px] 2xl:pt-[120px] 2xl:pb-[250px] relative z-0 bg-black overflow-hidden'>
+                <section className={`pt-[50px] sm:pt-[80px] 2xl:pt-[120px] pb-[100px] 2xl:pb-[250px] relative z-0 bg-black overflow-hidden ${isHire ? "mb-[50px] sm:mb-[80px] lg:mb-0" : 'mb-0'}`}>
                     <Image src={bgImage} alt="Bg Shadow" className={`absolute left-[100px] right-0 z-[-1] ${isHire ? 'w-10/12 mx-auto top-[-340px]' : 'w-6/12 mx-auto top-[-200px]'}`} />
                     <div className="container">
                         <div className="grid grid-cols-12">
                             <motion.div className="col-span-12 " variants={textVariants}
                                 initial="initial"
                                 whileInView="animate">
-                                <motion.h2 variants={textVariants} className={`text-[25px] md:text-[45px] lg:text-[55px] leading-[35px] md:leading-[55px] lg:leading-[65px] text-[#fff] font-bold text-center ${isHire ? 'mb-3' : 'mb-3 lg:mb-8'}`}>{joinTitle}</motion.h2>
-                                <p className='text-white opacity-70 text-[20px] leading-[30px] font-light text-center mb-3 lg:mb-12'>{joinDesc}</p>
+                                <motion.h2 variants={textVariants} className={`text-[25px] md:text-[45px] lg:text-[55px] leading-[35px] md:leading-[55px] lg:leading-[65px] text-[#fff] font-bold text-center ${isHire ? 'mb-1 md:mb-3' : 'mb-3 lg:mb-8'}`}>{joinTitle}</motion.h2>
+                                <p className='text-white opacity-70 text-[15px] md:text-[20px] leading-[20px] md:leading-[30px] font-light text-center mb-3 lg:mb-12'>{joinDesc}</p>
                                 <motion.div variants={textVariantsTwo}
                                     initial="initial"
                                     whileInView="animate" className='sm:flex items-center justify-center group hidden'>
@@ -268,7 +233,7 @@ const OurProduct = ({ content }) => {
                                         href="#href"
                                         css="border group-hover:border-[#B9B9B9] bg-[#6B46FF] group-hover:bg-transparent transition-all ease-in-out duration-700 text-white border-[#6B46FF] group-hover:text-white" />
                                     <div className='overflow-hidden'>
-                                        <motion.a variants={textVariantsTwo} href="#href" className='w-[50px] lg:w-[60px] h-[50px] lg:h-[60px] rounded-full bg-[#6B46FF] flex items-center justify-center group-hover:border-white border border-[#6B46FF] group-hover:bg-transparent circleBtn overflow-hidden'>
+                                        <motion.a variants={textVariantsTwo} href="#href" className='w-[45px] lg:w-[60px] h-[45px] lg:h-[60px] rounded-full bg-[#6B46FF] flex items-center justify-center group-hover:border-white border border-[#6B46FF] group-hover:bg-transparent circleBtn overflow-hidden'>
                                             <Image src={ArrowImage2} alt='Arrow Image' width={16} height={16} className='group-hover:brightness-[100] group-hover:invert-0 transition-all ease-in-out duration-700' />
                                         </motion.a>
                                     </div>

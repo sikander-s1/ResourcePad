@@ -96,7 +96,7 @@ const Header = () => {
                 <div className="grid grid-cols-12 items-center">
                     <div className="col-span-6 sm:col-span-3 lg:col-span-2">
                         <div className="logo">
-                            <Link href="#href">
+                            <Link href="/">
                                 <Image src={Logo} alt='Logo' />
                             </Link>
                         </div>

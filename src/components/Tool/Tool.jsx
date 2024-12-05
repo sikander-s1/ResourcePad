@@ -172,33 +172,33 @@ const Tool = () => {
             <div className="container">
                 <div className="grid grid-cols-12">
                     <div className="col-span-12">
-                        <h2 className='text-[25px] md:text-[45px] lg:text-[55px] leading-[35px] md:leading-[55px] lg:leading-[65px] text-[#202020] font-bold text-center mb-5 xxl:mb-14'>
+                        <h2 className='text-[25px] md:text-[45px] lg:text-[55px] leading-[35px] md:leading-[55px] lg:leading-[65px] text-[#202020] font-bold text-center mb-5 lg:mb-8 xxl:mb-14'>
                             Our tool stack <br className='lg:block hidden' />
                             To bring ideas into reality
                         </h2>
                     </div>
                 </div>
-                <div className="border border-[#E2E2E2] rounded-[20px] relative z-0 py-20 px-4 lg:px-12">
+                <div className="border border-[#E2E2E2] rounded-[20px] relative z-0 py-6 sm:py-10 lg:py-20 px-4 md:px-7 lg:px-12">
                     <Image src={ToolBg} alt='Tool BG' fill={true} className='object-cover object-center z-[-1] rounded-[20px]' />
                     <Image src={ToolBg2} alt='Tool BG' className='absolute right-0 bottom-0 z-[-1] opacity-60' />
-                    <div className="grid grid-cols-12">
+                    <div className="grid grid-cols-12 gap-y-7 sm:gap-y-12">
                         {/* Tabs Navigation */}
-                        <div className="col-span-6">
-                            <div className="txt">
-                                <h3 className='text-[#202020] text-[30px] font-bold leading-[40px] mb-4'>
+                        <div className="col-span-12 lg:col-span-6">
+                            <div className="txt sm:text-start text-center">
+                                <h3 className='text-[#202020] text-[25px] sm:text-[30px] font-bold leading-[30px] sm:leading-[40px] mb-2 sm:mb-4'>
                                     Integrated with the tools you love
                                 </h3>
-                                <p className='text-[#646474] text-[20px] leading-[30px] font-light lg:w-9/12 mb-4 lg:mb-9'>
+                                <p className='text-[#646474] text-[16px] sm:text-[20px] leading-[22px] sm:leading-[30px] font-light xl:w-9/12 mb-4 md:mb-9'>
                                     When she reached the first hills of the Italic Mountains
                                     had a last view back on the skyline.
                                 </p>
-                                <ul className='flex flex-wrap gap-x-4 gap-y-5 items-center lg:w-10/12'>
+                                <ul className='flex flex-wrap xl:gap-x-4 gap-2 xl:gap-y-5 items-center justify-center sm:justify-start xl:w-10/12'>
                                     {tabInfo.map((tab) => (
                                         <li
                                             key={tab.index}
                                             role="tab"
                                             aria-selected={activeTab === tab.index}
-                                            className={`cursor-pointer px-4 lg:px-6 py-2.5 flex items-center gap-x-3 text-[20px] leading-[30px] h-full duration-700 ease-in-out border rounded-full font-normal ${activeTab === tab.index
+                                            className={`cursor-pointer px-2 sm:px-4 lg:px-6 py-1.5 sm:py-2.5 flex items-center gap-x-3 text-[14px] sm:text-[16px] md:text-[20px] leading-[20px] md:leading-[30px] h-full duration-700 ease-in-out border rounded-full font-normal ${activeTab === tab.index
                                                 ? 'bg-gradient-to-br from-[#6B46FF] to-[#8E72FF] rounded-full text-white border-[#6B46FF] shadow-[0_7px_19px_rgba(151,165,255,1)]'
                                                 : 'text-[#202020] opacity-60 border-[#DEDEDE]'
                                                 }`}
@@ -212,11 +212,11 @@ const Tool = () => {
                         </div>
 
                         {/* Tab Contents */}
-                        <div className="col-span-6 flex items-center justify-end">
-                            <div className='flex flex-wrap gap-4 items-center'>
+                        <div className="col-span-12 lg:col-span-6 flex items-center justify-center sm:justify-start lg:justify-end">
+                            <div className='flex flex-wrap gap-2 sm:gap-4 items-center justify-center sm:justify-start'>
                                 {tabContents[activeTab]?.tools.map((tool, index) => (
                                     <div key={index}>
-                                        <div className="border border-[#E2E2E2] rounded-[20px] w-[110px] h-[110px] bg-white flex items-center justify-center">
+                                        <div className="border border-[#E2E2E2] rounded-[20px] w-[80px] sm:w-[90px] md:w-[110px] h-[80px] sm:h-[90px] md:h-[110px] bg-white flex items-center justify-center">
                                             <Image src={tool} alt='ToolIon' className='w-6/12 object-contain' />
                                         </div>
                                     </div>

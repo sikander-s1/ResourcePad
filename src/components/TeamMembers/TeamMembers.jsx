@@ -92,9 +92,9 @@ const TeamMembers = ({ content }) => {
                     <div className="col-span-12 xl:col-span-8 xxl:col-span-7">
                         <motion.div variants={textVariants}
                             initial="initial"
-                            whileInView="animate" className="txt">
-                            <motion.h2 variants={textVariants} className='text-[25px] md:text-[45px] lg:text-[55px] leading-[35px] md:leading-[55px] lg:leading-[65px] text-[#202020] font-bold mb-3 text-center lg:text-left'>{title}</motion.h2>
-                            <motion.p variants={textVariants} className='text-[#646474] text-[14px] md:text-[16px] lg:text-[19px] leading-[22px] md:leading-[26px] lg:leading-[29px] mb-6 lg:mb-12 text-center lg:text-left'>{desc}</motion.p>
+                            whileInView="animate" className="txt xl:text-left text-center">
+                            <motion.h2 variants={textVariants} className='text-[25px] md:text-[45px] lg:text-[55px] leading-[35px] md:leading-[55px] lg:leading-[65px] text-[#202020] font-bold mb-3'>{title}</motion.h2>
+                            <motion.p variants={textVariants} className='text-[#646474] text-[14px] md:text-[16px] lg:text-[19px] leading-[22px] md:leading-[26px] lg:leading-[29px] mb-6 lg:mb-12'>{desc}</motion.p>
                         </motion.div>
                     </div>
                 </div>

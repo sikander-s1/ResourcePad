@@ -14,81 +14,6 @@ import Shade1 from "media/price-shade1.png"
 import Shade2 from "media/price-shade2.png"
 import BgImage from "media/bg-particle.png"
 
-// const tabInfo = [
-//     {
-//         icon: Icon1,
-//         label: "For businesses & enterprises",
-//         index: 0,
-//     },
-//     {
-//         icon: Icon2,
-//         label: "For individuals & small teams",
-//         index: 1,
-//     },
-// ];
-
-// const tabContents = [
-//     {
-//         productList: [
-//             "HRMS",
-//             "CRM",
-//             "Chat",
-//             "Invoicing System (POS)",
-//             "Donation Manage System",
-//             "LMS",
-//             "Hotel & Property System",
-//         ],
-//         pricingCards: [
-//             {
-//                 title: (
-//                     <>
-//                         Professional <br className="lg:block hidden" /> Customer Platform
-//                     </>
-//                 ),
-//                 desc: "Comprehensive marketing, sales, customer service, content, and operations software",
-//                 price: "1,299",
-//                 isBtn: true,
-//                 subTitle: "Includes 5 seats",
-//                 subDisc: "Additional seats start at US$45/mo",
-//             },
-//             {
-//                 title: (
-//                     <>
-//                         Enterprise Customer <br className="lg:block hidden" /> Platform
-//                     </>
-//                 ),
-//                 desc: (
-//                     <>
-//                         Our most powerful marketing, sales, <br className="xxl:block hidden" /> customer
-//                         service, content, and operations<br className="xxl:block hidden" /> software
-//                     </>
-//                 ),
-//                 price: "4,300",
-//                 isBtn: false,
-//                 subTitle: "Includes 7 seats",
-//                 subDisc: "Additional seats start at US$75/mo",
-//             },
-//         ],
-//     },
-//     {
-//         productList: [
-//             "Email Marketing",
-//             "Social Media Tools",
-//             "Customer Feedback System",
-//         ],
-//         pricingCards: [
-//             {
-//                 title: <>Starter Pack for Teams</>,
-//                 desc: "Basic tools to manage team communication and tasks",
-//                 price: "499",
-//                 isBtn: true,
-//                 subTitle: "Includes 3 seats",
-//                 subDisc: "Additional seats start at US$25/mo",
-//             },
-//         ],
-//     },
-// ];
-
 const PricingBanner = ({ content }) => {
     const { title, desc, isPrice, tabInfo, tabContents } = content;
     // Tabs
@@ -115,7 +40,7 @@ const PricingBanner = ({ content }) => {
     }, []);
 
     return (
-        <section className="relative z-0 pt-[80px] xl:pt-[120px] pb-[90px]">
+        <section className="relative z-0 pt-[50px] sm:pt-[80px] xl:pt-[120px] pb-[90px]">
             {isPrice ?
                 <>
                     <div className="top-0 left-0 z-[-1] absolute">
@@ -155,13 +80,13 @@ const PricingBanner = ({ content }) => {
                                 </div>
                             </motion.div>}
                         {isPrice ?
-                            <p className="flex justify-center items-center bg-[#F4F1FF] mx-auto mb-6 rounded-full w-[120px] h-[45px] font-semibold text-[#6B46FF] text-[18px] leading-[28px]">
+                            <p className="flex justify-center items-center bg-[#F4F1FF] mx-auto mb-2 sm:mb-6 rounded-full w-[120px] h-[45px] font-semibold text-[#6B46FF] text-[18px] leading-[28px]">
                                 PRICING
                             </p> : null}
                         <h1 className="mb-4 font-bold text-[#202020] text-[30px] sm:text-[40px] md:text-[55px] lg:text-[65px] leading-[40px] sm:leading-[50px] md:leading-[65px] lg:leading-[75px]">
                             {title}
                         </h1>
-                        <p className="mx-auto mb-3 lg:mb-20 lg:w-10/12 xl:w-9/12 font-normal text-[#646474] text-[16px] md:text-[22px] leading-[23px] md:leading-[29px]">
+                        <p className="mx-auto mb-5 sm:mb-10 lg:mb-20 lg:w-10/12 xl:w-9/12 font-normal text-[#646474] text-[16px] md:text-[22px] leading-[23px] md:leading-[29px]">
                             {desc}
                         </p>
                     </div>
@@ -169,28 +94,28 @@ const PricingBanner = ({ content }) => {
                     {/* Tabs Navigation */}
                     <div className="col-span-12">
                         <div className="grid grid-cols-12">
-                            <div className="col-span-4">
-                                <div className="flex justify-center items-center border-[#C3CAC9] mx-auto border rounded-full lg:w-10/12 h-[65px] btn">
-                                    <Link href="#href" className='flex items-center gap-x-3 font-normal text-[#202020] text-[18px] leading-[28px]'>
+                            <div className="col-span-2 sm:col-span-1 md:col-span-3 lg:col-span-4">
+                                <div className="flex justify-center items-center border-[#C3CAC9] mx-auto border rounded-full lg:w-10/12 sm:w-auto w-[45px] h-[45px] sm:h-[50px] md:h-[60px] lg:h-[65px] btn">
+                                    <Link href="#href" className='flex items-center gap-x-3 font-normal text-[#202020] text-[15px] lg:text-[18px] leading-[22px] lg:leading-[28px]'>
                                         <Image src={Arrow} alt='Arrow' />
-                                        Back to Overview
+                                        <span className='md:block hidden'>Back to Overview</span>
                                     </Link>
                                 </div>
                             </div>
-                            <div className="col-span-8">
-                                <ul className={`flex justify-between items-center gap-4 border-[#C3CAC9] mb-6 border rounded-full h-[65px]`}>
+                            <div className="col-span-10 sm:col-span-11 md:col-span-9 lg:col-span-8">
+                                <ul className={`flex flex-wrap justify-between items-center gap-4 border-[#C3CAC9] mb-6 sm:border rounded-full h-[45px] sm:h-[50px] md:h-[60px] lg:h-[65px]`}>
                                     {tabInfo.map((tab) => (
                                         <li
                                             key={tab.index}
                                             role="tab"
                                             aria-selected={activeTab === tab.index}
-                                            className={`${isPrice ? 'px-4 lg:px-14' : 'w-full flex items-center justify-center px-4 lg:px-8'} cursor-pointer py-2 flex items-center gap-x-3 text-[20px] leading-[30px] h-full duration-700 ease-in-out ${activeTab === tab.index
+                                            className={`${isPrice ? 'px-4 lg:px-8 xl:px-14' : 'w-full flex items-center justify-center px-4 lg:px-8'} cursor-pointer py-2 flex items-center gap-x-3 text-[14px] sm:text-[16px] xl:text-[20px] leading-[20px] sm:leading-[25px] xl:leading-[30px] h-full duration-700 ease-in-out text-center border rounded-full w-full sm:w-max ${activeTab === tab.index
                                                 ? 'bg-[#6B46FF] rounded-full text-white font-normal'
-                                                : 'text-[#202020] opacity-60 font-semibold'
+                                                : 'text-[#202020] border-[#C3CAC9] opacity-60 font-semibold'
                                                 }`}
                                             onClick={() => handleTabClick(tab.index)}
                                         >
-                                            <Image src={tab.icon} alt="Icon" className={`${activeTab === tab.index
+                                            <Image src={tab.icon} alt="Icon" className={`lg:block hidden ${activeTab === tab.index
                                                 ? 'brightness-[100]'
                                                 : ''
                                                 }`} />
@@ -204,21 +129,21 @@ const PricingBanner = ({ content }) => {
 
                     {/* Tab Content */}
                     <div className="col-span-12">
-                        <div className="mt-5 lg:mt-8 tab_content">
+                        <div className="mt-[70px] sm:mt-5 lg:mt-8 tab_content">
                             {isPrice ?
                                 (
                                     tabContents[activeTab]?.productList && (
-                                        <div className="gap-x-7 grid grid-cols-12">
-                                            <div className="col-span-3">
-                                                <div className="border-[#E2E2E2] px-7 py-14 border rounded-[20px] h-full product_list">
-                                                    <h3 className="mb-5 lg:mb-10 font-bold text-[#202020] text-[30px] leading-[35px]">
+                                        <div className="gap-x-4 lg:gap-x-7 gap-y-5 grid grid-cols-12">
+                                            <div className="col-span-12 lg:col-span-3">
+                                                <div className="border-[#E2E2E2] px-4 xxl:px-7 py-14 border rounded-[20px] h-full product_list">
+                                                    <h3 className="mb-5 xl:mb-10 font-bold text-[#202020] text-[25px] xl:text-[30px] leading-[30px] xl:leading-[35px]">
                                                         Products List
                                                     </h3>
                                                     <ul>
                                                         {tabContents[activeTab].productList.map((list, index) => (
                                                             <li key={index} className="mb-2 group">
                                                                 <div className="group-hover:bg-[#E7E4F5] px-4 py-2 rounded-full duration-700 group-hover:duration-700 ease-in-out">
-                                                                    <Link href="#href" className="group-hover:text-[#6B46FF] opacity-60 group-hover:opacity-100 font-normal text-[#202020] text-[20px] leading-[30px]">
+                                                                    <Link href="#href" className="group-hover:text-[#6B46FF] opacity-60 group-hover:opacity-100 font-normal text-[#202020] text-[16px] xl:text-[20px] leading-[25px] xl:leading-[30px]">
                                                                         {list}
                                                                     </Link>
                                                                 </div>
@@ -227,42 +152,42 @@ const PricingBanner = ({ content }) => {
                                                     </ul>
                                                 </div>
                                             </div>
-                                            <div className="col-span-9">
-                                                <div className="gap-x-7 grid grid-cols-12">
+                                            <div className="col-span-12 lg:col-span-9">
+                                                <div className="gap-y-5 md:gap-x-4 lg:gap-x-7 grid grid-cols-12">
                                                     {tabContents[activeTab].pricingCards.map((priceData, index) => (
-                                                        <div className="col-span-6" key={index}>
-                                                            <div className="flex flex-col justify-between border-[#E2E2E2] bg-white shadow-[0_0px_8px_0px_rgba(0,0,0,0.07)] px-8 pt-9 pb-12 border rounded-[20px] h-full card">
+                                                        <div className="col-span-12 md:col-span-6" key={index}>
+                                                            <div className="flex flex-col justify-between border-[#E2E2E2] bg-white shadow-[0_0px_8px_0px_rgba(0,0,0,0.07)] px-6 lg:px-8 pt-9 pb-12 border rounded-[20px] h-full card">
                                                                 <div className="card_top">
-                                                                    <h3 className="mb-5 font-bold text-[#202020] text-[30px] leading-[35px]">
+                                                                    <h3 className="mb-3 xl:mb-5 font-bold text-[#202020] text-[25px] xl:text-[30px] leading-[30px] xl:leading-[35px]">
                                                                         {priceData.title}
                                                                     </h3>
-                                                                    <p className="mb-7 font-normal text-[#646474] text-[20px] leading-[25px]">
+                                                                    <p className="mb-5 xl:mb-7 font-normal text-[#646474] text-[16px] xl:text-[20px] leading-[25px] xl:leading-[25px]">
                                                                         {priceData.desc}
                                                                     </p>
                                                                 </div>
-                                                                <div className="mb-8 pricing">
+                                                                <div className="mb-4 xl:mb-8 pricing">
                                                                     <p className="inline-block font-bold text-[#6B46FF] text-[55px] leading-[60px]">
                                                                         <sup>$</sup>
                                                                         {priceData.price}
                                                                     </p>
-                                                                    <span className="font-normal text-[#646474] text-[20px] leading-[25px]">
+                                                                    <span className="font-normal text-[#646474] text-[16px] xl:text-[20px] leading-[25px] xl:leading-[25px]">
                                                                         /Month
                                                                     </span>
                                                                 </div>
                                                                 <div className="card_bottom">
                                                                     {priceData.isBtn ?
-                                                                        <div className="flex justify-between items-center bg-[#ECECEC] rounded-full h-[55px] btns">
-                                                                            <Link href="#href" className='flex justify-center items-center px-8 rounded-full w-full h-full font-semibold text-[#646474] text-[20px] text-center leading-[25px]'>
+                                                                        <div className="flex flex-col sm:flex-row gap-y-2 justify-between items-center bg-[#ECECEC] rounded-full h-[55px] btns mb-3 sm:mb-0">
+                                                                            <Link href="#href" className='flex justify-center items-center py-5 sm:py-0 px-8 rounded-full w-full h-full font-semibold text-[#646474] text-[20px] text-center leading-[25px]'>
                                                                                 Monthly
                                                                             </Link>
-                                                                            <Link href="#href" className='flex justify-center items-center px-8 gredient_border rounded-full w-full h-full font-semibold text-[#202020] text-[20px] leading-[25px]'>
+                                                                            <Link href="#href" className='flex justify-center items-center py-5 sm:py-0 px-8 gredient_border rounded-full w-full h-full font-semibold text-[#202020] text-[16px] xl:text-[20px] leading-[25px] xl:leading-[25px]'>
                                                                                 Annually
                                                                             </Link>
                                                                         </div> : null}
-                                                                    <h6 className="pt-4 lg:pt-8 pb-1 font-semibold text-[#202020] text-[25px]">
+                                                                    <h6 className="pt-4 lg:pt-8 pb-1 font-semibold text-[#202020] text-[25px] mt-[70px] sm:mt-0">
                                                                         {priceData.subTitle}
                                                                     </h6>
-                                                                    <p className="mb-4 lg:mb-8 font-normal text-[#646474] text-[20px] leading-[25px]">
+                                                                    <p className="mb-4 lg:mb-8 font-normal text-[#646474] text-[16px] xl:text-[20px] leading-[25px] xl:leading-[25px]">
                                                                         {priceData.subDisc}
                                                                     </p>
                                                                     {priceData.isBtn ?
@@ -272,7 +197,7 @@ const PricingBanner = ({ content }) => {
                                                                                     <Image src={Phone} alt='Phone' />
                                                                                     Talk to Sales
                                                                                 </Link>
-                                                                                <Link href='#href' className='flex justify-center items-center bg-[#6B46FF] rounded-full w-[75px] h-[65px]'>
+                                                                                <Link href='#href' className='sm:flex justify-center items-center bg-[#6B46FF] rounded-full w-[75px] h-[65px] hidden'>
                                                                                     <Image src={ArrowTwo} alt='Arrow' className='brightness-[100]' />
                                                                                 </Link>
                                                                             </div>
@@ -283,7 +208,7 @@ const PricingBanner = ({ content }) => {
                                                                                     <Image src={PhoneTwo} alt='Phone' />
                                                                                     Talk to Sales
                                                                                 </Link>
-                                                                                <Link href='#href' className='flex justify-center items-center border-[#D8D8D8] bg-transparent border rounded-full w-[75px] h-[65px]'>
+                                                                                <Link href='#href' className='hidden sm:flex justify-center items-center border-[#D8D8D8] bg-transparent border rounded-full w-[75px] h-[65px]'>
                                                                                     <Image src={ArrowTwo} alt='Arrow' className='' />
                                                                                 </Link>
                                                                             </div>
@@ -302,20 +227,20 @@ const PricingBanner = ({ content }) => {
                                         <div>
                                             {tabContents[activeTab].map((item, index) => (
                                                 <div key={index}>
-                                                    <div className="gap-x-7 grid grid-cols-12 pt-[80px]">
+                                                    <div className="gap-x-7 grid grid-cols-12 pt-[40px] sm:pt-0 xl:pt-[80px]">
                                                         <div className="col-span-12">
-                                                            <h2 className='text-[#202020] text-[55px] leading-[65px] font-bold'>{item.subTitle}</h2>
-                                                            <p className='text-[#646474] text-[20px] leading-[30px] font-light mb-4 lg:mb-12'>{item.subDesc}</p>
+                                                            <h2 className='text-[#202020] text-[30px] sm:text-[45px] lg:text-[55px] leading-[40px] sm:leading-[55px] lg:leading-[65px] font-bold'>{item.subTitle}</h2>
+                                                            <p className='text-[#646474] text-[16px] xl:text-[20px] leading-[25px] xl:leading-[30px] font-light mb-4 lg:mb-12'>{item.subDesc}</p>
                                                         </div>
                                                     </div>
-                                                    <div className={`grid ${item.css} gap-x-4`}>
+                                                    <div className={`grid ${item.css} gap-4`}>
                                                         {item.isBlog ?
                                                             (item.blogs && item.blogs.map((blog, index) => (
                                                                 <div key={index}>
                                                                     <div className="card">
-                                                                        <Image src={blog.image} alt='Blog' className='min-h-[315px]' />
-                                                                        <h3 className='text-[#202020] text-[25px] leading-[35px] font-semibold mb-3 mt-3 lg:mt-6 lg:w-11/12'>{blog.blogTitle}</h3>
-                                                                        <p className='text-[#646474] text-[18px] leading-[21px] font-normal'>{blog.blogDesc}</p>
+                                                                        <Image src={blog.image} alt='Blog' className='min-h-[315px] ml-auto mr-auto sm:ml-0 w-full sm:w-auto' />
+                                                                        <h3 className='text-[#202020] text-[16px] sm:text-[20px] lg:text-[25px] leading-[22px] sm:leading-[35px] font-semibold mb-2 lg:mb-3 mt-3 lg:mt-6 lg:w-11/12 text-center sm:text-left'>{blog.blogTitle}</h3>
+                                                                        <p className='text-[#646474] text-[14px] sm:text-[16px] lg:text-[18px] leading-[20px] sm:leading-[21px] font-normal text-center sm:text-left'>{blog.blogDesc}</p>
                                                                     </div>
                                                                 </div>
                                                             ))) :
@@ -327,7 +252,7 @@ const PricingBanner = ({ content }) => {
                                                                 </div>
                                                             )))}
                                                         <div className="btn">
-                                                            <Link href="#href" className='text-[18px] text-[#202020] leading-[28px] font-medium border border-[#CCCCCC] h-[68px] w-[220px] flex items-center justify-center rounded-full mt-4 lg:mt-14'>
+                                                            <Link href="#href" className='text-[18px] text-[#202020] leading-[28px] font-medium border border-[#CCCCCC] h-[68px] w-[220px] flex items-center justify-center rounded-full mt-4 lg:mt-14 ml-auto mr-auto sm:ml-0'>
                                                                 View More
                                                             </Link>
                                                         </div>

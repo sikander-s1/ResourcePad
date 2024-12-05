@@ -96,7 +96,6 @@ const ContactForm = ({ content }) => {
         }
     ]
 
-
     const toggleButton = () => setActive(!active)
     return (
         <section className='bg-black relative py-[70px] xl:py-[120px] z-0 overflow-hidden'>
@@ -109,9 +108,9 @@ const ContactForm = ({ content }) => {
                         <motion.div variants={textVariants}
                             initial="initial"
                             whileInView="animate" className="txt">
-                            <motion.p variants={textVariants} className='text-[20px] sm:text-[30px] xl:text-[40px] xxl:text-[49px] leading-[30px] sm:leading-[40px] xl:leading-tight font-regular text-[#CCCCCC]'>Excited?</motion.p>
+                            <motion.p variants={textVariants} className='text-[25px] sm:text-[30px] xl:text-[40px] xxl:text-[49px] leading-[30px] sm:leading-[40px] xl:leading-tight font-regular text-[#CCCCCC]'>Excited?</motion.p>
                             <motion.div variants={textVariants} className="flex items-center gap-4 lg:gap-5">
-                                <motion.h2 variants={textVariants} className='text-[#886AFF] text-[25px] md:text-[45px] lg:text-[45px] xxl:text-[65px] leading-[35px] md:leading-[55px] xxl:leading-[75px] font-bold mb-[20px] xxl:mb-[10px]'>{title}</motion.h2>
+                                <motion.h2 variants={textVariants} className='text-[#886AFF] text-[30px] md:text-[45px] lg:text-[45px] xxl:text-[65px] leading-[35px] md:leading-[55px] xxl:leading-[75px] font-bold mb-[20px] xxl:mb-[10px]'>{title}</motion.h2>
                                 {inputs ? null :
                                     <motion.button variants={textVariants} onClick={toggleButton} className="border border-[#444444] w-[50px] lg:w-[70px] h-[50px] lg:h-[70px] rounded-full flex items-center justify-center mt-[-9px] group">
                                         <Image src={Plus} alt='Plus Icon' className={`group-hover:rotate-45 duration-700 group-hover:duration-700 ease-in-out w-6 lg:w-8 lg:h-8 h-6 ${active ? 'rotate-45' : ''}`} />
@@ -120,9 +119,9 @@ const ContactForm = ({ content }) => {
                             </motion.div>
                             <motion.p variants={textVariants} className='text-[#CCCCCC] text-[14px] md:text-[16px] lg:text-[20px] leading-[22px] md:leading-[26px] lg:leading-[30px] font-light lg:w-10/12'>{desc}</motion.p>
                             {inputs ?
-                                <form className='bg-white/10 h-[65px] rounded-full mt-5 lg:mt-10 flex items-center justify-between lg:w-10/12'>
-                                    <input type="email" placeholder='Email address' className='text-[20px] font-light text-[#9F9FA9] bg-transparent h-full focus:outline-none pl-[30px]' required />
-                                    <button className='text-[20px] text-white font-normal w-[215px] bg-[#6B46FF] h-[65px] rounded-full'>
+                                <form className='bg-white/10 h-[65px] rounded-full mt-5 lg:mt-10 flex flex-wrap items-center justify-between gap-3 lg:w-10/12 mb-[40px]'>
+                                    <input type="email" placeholder='Email address' className='text-[18px] sm:text-[20px] font-light text-[#9F9FA9] bg-transparent h-full focus:outline-none pl-[30px]' required />
+                                    <button className='text-[18px] sm:text-[20px] text-white font-normal w-full sm:w-[215px] bg-[#6B46FF] h-[65px] rounded-full'>
                                         Subscribe
                                     </button>
                                 </form>
@@ -132,7 +131,7 @@ const ContactForm = ({ content }) => {
                     <motion.div variants={textVariantsTwo}
                         initial="initial"
                         whileInView="animate" className="col-span-12 lg:col-span-5 lg:block hidden">
-                        <Image src={ContactImage} alt='Laptop Image' className='w-10/12 ml-auto mr-auto xxl:mr-0' />
+                        <Image src={ContactImage} alt='Laptop Image' className='w-10/12 ml-auto mr-auto 2xl:mr-0' />
                     </motion.div>
                 </div>
                 {active ?

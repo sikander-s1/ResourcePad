@@ -74,7 +74,7 @@ const LookingFor = ({ content }) => {
                             </motion.div>
                         </div>
                     </div>
-                    <div className="gap-4 md:gap-7 grid grid-cols-1 sm:grid-cols-2">
+                    <div className="gap-4 lg:gap-7 grid grid-cols-1 sm:grid-cols-2">
                         {lookingCards.map((carddata, index) => (
                             <div key={index}>
                                 <motion.div variants={topVariants} initial="initial"
@@ -107,10 +107,10 @@ const LookingFor = ({ content }) => {
                                 </p>
                                 <motion.h3 variants={textVariants}
                                     initial="initial"
-                                    whileInView="animate" className='md:mb-5 font-bold text-[18px] text-center text-white lg:text-[25px] lg:text-left xl:text-[30px] lg:leading-[30px] xl:leading-[35px]'>
+                                    whileInView="animate" className='mb-3 lg:mb-5 font-bold text-[18px] text-center text-white lg:text-[25px] lg:text-left xl:text-[30px] lg:leading-[30px] xl:leading-[35px]'>
                                     {ctaTitle}
                                 </motion.h3>
-                                <p className='lg:mb-4 xxl:pr-20 xl:w-6/12 font-extralight text-[15px] text-white lg:text-[18px] xl:text-[20px] leading-[22px] md:leading-[25px] lg:leading-tight'>{ctaDesc}</p>
+                                <p className='lg:mb-4 xxl:pr-20 xl:w-6/12 font-extralight text-[15px] text-white lg:text-[18px] xl:text-[20px] leading-[22px] md:leading-[25px] lg:leading-tight lg:text-left text-center'>{ctaDesc}</p>
                             </motion.div>
                             {counter ?
                                 <motion.div variants={textVariants}

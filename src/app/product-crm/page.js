@@ -240,7 +240,7 @@ const ProductCRMInner = () => {
             cardTitle: "Search everything",
             cardDesc: "Find any file, a connected app, or your local drive, from one place.",
             css: "",
-            imageCss: "mt-[-190px]",
+            imageCss: "sm:mt-[-90px] md:mt-[-190px]",
             imagePosition: false,
             isBgImage: true
         },
@@ -429,7 +429,6 @@ const ProductCRMInner = () => {
             slideDesc: "As a software developer, I thrive on turning innovative ideas into functional applications. I specialize in crafting seamless user experiences and efficient code. My passion for technology drives me to continuously learn and adapt in this ever-evolving field."
         }
     ]
-
     const TeamMembersContent = {
         title: "Perfect fit for every team",
         desc: "When she reached the first hills of the Italic Mountains had a last view back on the skyline.",

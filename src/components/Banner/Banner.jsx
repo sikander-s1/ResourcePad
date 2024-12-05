@@ -74,7 +74,7 @@ const Banner = ({ content }) => {
     };
 
     return (
-        <section className='pt-[80px] xl:pt-[120px] relative z-0'>
+        <section className='pt-[50px] sm:pt-[80px] xl:pt-[120px] relative z-0'>
             <div className='absolute right-0 top-0 z-[-1]'>
                 <Image src={bgParticle} alt='Background Particle' />
             </div>
@@ -124,7 +124,7 @@ const Banner = ({ content }) => {
                                     href="#href"
                                     css="border group-hover:border-[#B9B9B9] bg-[#6B46FF] group-hover:bg-transparent transition-all ease-in-out duration-700 text-white group-hover:text-black border-[#6B46FF] overflow-hidden w-full" />
                                 <div className='sm:block hidden'>
-                                    <Link href="#href" className='w-[50px] lg:w-[60px] h-[50px] lg:h-[60px] rounded-full bg-[#6B46FF] flex items-center justify-center circleBtn group-hover:bg-transparent group-hover:border-[#B9B9B9] border border-[#6B46FF] group-hover:duration-700 ease-in-out duration-700 overflow-hidden'>
+                                    <Link href="#href" className='w-[45px] lg:w-[60px] h-[45px] lg:h-[60px] rounded-full bg-[#6B46FF] flex items-center justify-center circleBtn group-hover:bg-transparent group-hover:border-[#B9B9B9] border border-[#6B46FF] group-hover:duration-700 ease-in-out duration-700 overflow-hidden'>
                                         <Image src={ArrowImage} alt='Arrow Image' width={16} height={16} className='group-hover:invert-[1] group-hover:duration-700 duration-700 ease-in-out' />
                                     </Link>
                                 </div>

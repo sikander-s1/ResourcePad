@@ -26,7 +26,6 @@ import Icon2 from "media/icons/tab-icon2.png";
 const ProductCRMInner = () => {
 
     // ========== Pricing Banner
-
     const tabInfo = [
         {
             icon: Icon1,

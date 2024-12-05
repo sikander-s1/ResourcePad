@@ -61,14 +61,14 @@ const ProductCRMInner = () => {
                 subTitle: "Ebooks & Reports",
                 subDesc: "Everything you need to scale your business, bundled together and discounted.",
                 bookList: [Book1, Book2, Book3, Book4],
-                css: 'grid-cols-4 lg:pb-[80px]',
+                css: 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 pb-[50px] lg:pb-[80px]',
                 isBlog: false,
             },
             {
                 subTitle: "Our Events recordings",
                 subDesc: "Everything you need to scale your business, bundled together and discounted.",
                 bookList: [Event1, Event2, Event3],
-                css: 'grid-cols-3 lg:pb-[80px]',
+                css: 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 pb-[50px] lg:pb-[80px]',
                 isBlog: false,
             },
             {
@@ -92,7 +92,7 @@ const ProductCRMInner = () => {
                     },
                 ],
                 isBlog: true,
-                css: 'grid-cols-3 lg:pb-[80px]',
+                css: 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 pb-[50px] lg:pb-[80px]',
             },
         ],
         [
@@ -100,14 +100,14 @@ const ProductCRMInner = () => {
                 subTitle: "Ebooks & Reports",
                 subDesc: "Everything you need to scale your business, bundled together and discounted.",
                 bookList: [Book2, Book1, Book4, Book3],
-                css: 'grid-cols-4 lg:pb-[80px]',
+                css: 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 pb-[50px] lg:pb-[80px]',
                 isBlog: false,
             },
             {
                 subTitle: "Our Events recordings",
                 subDesc: "Everything you need to scale your business, bundled together and discounted.",
                 bookList: [Event1, Event2, Event3],
-                css: 'grid-cols-3 lg:pb-[80px]',
+                css: 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 pb-[50px] lg:pb-[80px]',
                 isBlog: false,
             },
             {
@@ -131,7 +131,7 @@ const ProductCRMInner = () => {
                     },
                 ],
                 isBlog: true,
-                css: 'grid-cols-3 lg:pb-[80px]',
+                css: 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 pb-[50px] lg:pb-[80px]',
             },
         ],
         [
@@ -139,14 +139,14 @@ const ProductCRMInner = () => {
                 subTitle: "Ebooks & Reports",
                 subDesc: "Everything you need to scale your business, bundled together and discounted.",
                 bookList: [Book1, Book2, Book3, Book4],
-                css: 'grid-cols-4 lg:pb-[80px]',
+                css: 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 pb-[50px] lg:pb-[80px]',
                 isBlog: false,
             },
             {
                 subTitle: "Our Events recordings",
                 subDesc: "Everything you need to scale your business, bundled together and discounted.",
                 bookList: [Event1, Event2, Event3],
-                css: 'grid-cols-3 lg:pb-[80px]',
+                css: 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 pb-[50px] lg:pb-[80px]',
                 isBlog: false,
             },
             {
@@ -170,7 +170,7 @@ const ProductCRMInner = () => {
                     },
                 ],
                 isBlog: true,
-                css: 'grid-cols-3 lg:pb-[80px]',
+                css: 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 pb-[50px] lg:pb-[80px]',
             },
         ],
     ];
