@@ -127,15 +127,15 @@ const ReachUs = () => {
                             <motion.form variants={textVariantsTwo} initial="initial" whileInView="animate">
                                 <div className="grid grid-cols-12 md:gap-5">
                                     <motion.div variants={textVariantsTwo} className="col-span-12 md:col-span-6">
-                                        <div className="mb-[15px] md:mb-0 border border-[#e2e2e27f] bg-[#F8F8FA] py-4 px-4 flex items-center gap-3 rounded-[50px]">
-                                            <Image src={Form1} alt='Icon' />
-                                            <input type="text" name='name' placeholder='John Fletcher' className='placeholder:text-[16px] md:placeholder:text-[18px] placeholder:font-[400] placeholder:leading-[20px] md:placeholder:leading-[24px] text-[16px] md:text-[15px] lg:text-[18px] xxl:text-[20px] font-[400] bg-transparent w-full focus:outline-none text-[#9F9FA9]' required />
+                                        <div className="mb-[15px] md:mb-0 border border-[#e2e2e27f] focus-within:border-2 focus-within:border-[#A994FD] bg-[#F8F8FA] py-4 px-4 flex items-center gap-3 rounded-[50px]">
+                                            <Image src={Form1} alt="Icon" className='' />
+                                            <input type="text" name="name" placeholder="John Fletcher" className="placeholder:text-[16px] md:placeholder:text-[18px] placeholder:font-[400] placeholder:leading-[20px] md:placeholder:leading-[24px] text-[16px] md:text-[15px] lg:text-[18px] xxl:text-[20px] font-[400] bg-transparent w-full focus:outline-none text-[#9F9FA9] focus-within:placeholder:text-black" required />
                                         </div>
                                     </motion.div>
                                     <motion.div variants={textVariantsTwo} className="col-span-12 md:col-span-6">
-                                        <div className="mb-[15px] md:mb-0 border border-[#e2e2e27f] bg-[#F8F8FA] py-4 px-4 flex items-center gap-3 rounded-[50px]">
+                                        <div className="mb-[15px] md:mb-0 border border-[#e2e2e27f] focus-within:border-2 focus-within:border-[#A994FD] bg-[#F8F8FA] py-4 px-4 flex items-center gap-3 rounded-[50px] h-[64px]">
                                             <Image src={Form6} alt='Icon' />
-                                            <select name="jobs" className='placeholder:text-[16px] md:placeholder:text-[18px] placeholder:font-[400] placeholder:leading-[20px] md:placeholder:leading-[24px] text-[16px] md:text-[15px] lg:text-[18px] xxl:text-[20px] font-[400] bg-transparent w-full focus:outline-none text-[#9F9FA9] !border-0'>
+                                            <select name="jobs" className='placeholder:text-[16px] md:placeholder:text-[18px] placeholder:font-[400] placeholder:leading-[20px] md:placeholder:leading-[24px] text-[16px] md:text-[15px] lg:text-[18px] xxl:text-[20px] font-[400] bg-transparent w-full focus-within:placeholder:text-black focus:outline-none text-[#9F9FA9] !border-0'>
                                                 <option value="name" className='font-[400]'>Job Title</option>
                                                 <option value="name" className='font-[400]'>Job 1</option>
                                                 <option value="name" className='font-[400]'>Job 2</option>
@@ -145,21 +145,21 @@ const ReachUs = () => {
                                         </div>
                                     </motion.div>
                                     <motion.div variants={textVariantsTwo} className="col-span-12 md:col-span-6">
-                                        <div className="mb-[15px] md:mb-0 border border-[#e2e2e27f] bg-[#F8F8FA] py-4 px-4 flex items-center gap-3 rounded-[50px]">
+                                        <div className="mb-[15px] md:mb-0 border border-[#e2e2e27f] focus-within:border-2 focus-within:border-[#A994FD] bg-[#F8F8FA] py-4 px-4 flex items-center gap-3 rounded-[50px]">
                                             <Image src={Form2} alt='Icon' />
-                                            <input type="email" name='email' placeholder='Work Email' className='placeholder:text-[16px] md:placeholder:text-[18px]  placeholder:font-[400] placeholder:leading-[20px] md:placeholder:leading-[24px] text-[16px] md:text-[15px] lg:text-[18px] xxl:text-[20px] font-[400] bg-transparent w-full focus:outline-none text-[#9F9FA9]' required />
+                                            <input type="email" name='email' placeholder='Work Email' className='placeholder:text-[16px] md:placeholder:text-[18px]  placeholder:font-[400] placeholder:leading-[20px] md:placeholder:leading-[24px] text-[16px] md:text-[15px] lg:text-[18px] xxl:text-[20px] font-[400] bg-transparent w-full focus-within:placeholder:text-black focus:outline-none text-[#9F9FA9]' required />
                                         </div>
                                     </motion.div>
                                     <motion.div variants={textVariantsTwo} className="col-span-12 md:col-span-6">
-                                        <div className="mb-[15px] md:mb-0 border border-[#e2e2e27f] bg-[#F8F8FA] py-4 px-4 flex items-center gap-3 rounded-[50px]">
+                                        <div className="mb-[15px] md:mb-0 border border-[#e2e2e27f] focus-within:border-2 focus-within:border-[#A994FD] bg-[#F8F8FA] py-4 px-4 flex items-center gap-3 rounded-[50px]">
                                             <Image src={Form4} alt='Icon' />
-                                            <input type="text" name='companyName' placeholder='Company Name' className='placeholder:text-[16px] md:placeholder:text-[18px]  placeholder:font-[400] placeholder:leading-[20px] md:placeholder:leading-[24px] text-[16px] md:text-[15px] lg:text-[18px] xxl:text-[20px] font-[400] bg-transparent w-full focus:outline-none text-[#9F9FA9]' required />
+                                            <input type="text" name='companyName' placeholder='Company Name' className='placeholder:text-[16px] md:placeholder:text-[18px]  placeholder:font-[400] placeholder:leading-[20px] md:placeholder:leading-[24px] text-[16px] md:text-[15px] lg:text-[18px] xxl:text-[20px] font-[400] bg-transparent w-full focus-within:placeholder:text-black focus:outline-none text-[#9F9FA9]' required />
                                         </div>
                                     </motion.div>
                                     <motion.div variants={textVariantsTwo} className="col-span-12 md:col-span-6">
-                                        <div className="mb-[15px] md:mb-0 border border-[#e2e2e27f] bg-[#F8F8FA] py-4 px-4 flex items-center gap-3 rounded-[50px]">
+                                        <div className="mb-[15px] md:mb-0 border border-[#e2e2e27f] focus-within:border-2 focus-within:border-[#A994FD] bg-[#F8F8FA] py-4 px-4 flex items-center gap-3 rounded-[50px] h-[64px]">
                                             <Image src={Form7} alt='Icon' />
-                                            <select name="employees" className='placeholder:text-[16px] md:placeholder:text-[18px] placeholder:font-[400] placeholder:leading-[20px] md:placeholder:leading-[24px] text-[16px] md:text-[15px] lg:text-[18px] xxl:text-[20px] font-[400] bg-transparent w-full focus:outline-none text-[#9F9FA9] !border-0'>
+                                            <select name="employees" className='placeholder:text-[16px] md:placeholder:text-[18px] placeholder:font-[400] placeholder:leading-[20px] md:placeholder:leading-[24px] text-[16px] md:text-[15px] lg:text-[18px] xxl:text-[20px] font-[400] bg-transparent w-full focus-within:placeholder:text-black focus:outline-none text-[#9F9FA9] !border-0'>
                                                 <option value="employees" className='font-[400]'>Employees</option>
                                                 <option value="name" className='font-[400]'>Employees 1</option>
                                                 <option value="name" className='font-[400]'>Employees 2</option>
@@ -169,15 +169,15 @@ const ReachUs = () => {
                                         </div>
                                     </motion.div>
                                     <motion.div variants={textVariantsTwo} className="col-span-12 md:col-span-6">
-                                        <div className="mb-[15px] md:mb-0 border border-[#e2e2e27f] bg-[#F8F8FA] py-4 px-4 flex items-center gap-3 rounded-[50px]">
+                                        <div className="mb-[15px] md:mb-0 border border-[#e2e2e27f] focus-within:border-2 focus-within:border-[#A994FD] bg-[#F8F8FA] py-4 px-4 flex items-center gap-3 rounded-[50px]">
                                             <Image src={Form3} alt='Icon' />
-                                            <input type="number" name='number' placeholder='Mobile' className='placeholder:text-[16px] md:placeholder:text-[18px] placeholder:font-[400] placeholder:leading-[20px] md:placeholder:leading-[24px] text-[16px] md:text-[15px] lg:text-[18px] xxl:text-[20px] font-[400] bg-transparent w-full focus:outline-none text-[#9F9FA9]' required />
+                                            <input type="number" name='number' placeholder='Mobile' className='placeholder:text-[16px] md:placeholder:text-[18px] placeholder:font-[400] placeholder:leading-[20px] md:placeholder:leading-[24px] text-[16px] md:text-[15px] lg:text-[18px] xxl:text-[20px] font-[400] bg-transparent w-full focus-within:placeholder:text-black focus:outline-none text-[#9F9FA9]' required />
                                         </div>
                                     </motion.div>
                                     <motion.div variants={textVariantsTwo} className="col-span-12 md:col-span-6">
-                                        <div className="mb-[15px] md:mb-0 border border-[#e2e2e27f] bg-[#F8F8FA] py-4 px-4 flex items-center gap-3 rounded-[50px]">
+                                        <div className="mb-[15px] md:mb-0 border border-[#e2e2e27f] focus-within:border-2 focus-within:border-[#A994FD] bg-[#F8F8FA] py-4 px-4 flex items-center gap-3 rounded-[50px] h-[64px]">
                                             <Image src={Form8} alt='Icon' />
-                                            <select name="country" className='placeholder:text-[16px] md:placeholder:text-[18px] placeholder:font-[400] placeholder:leading-[20px] md:placeholder:leading-[24px] text-[16px] md:text-[15px] lg:text-[18px] xxl:text-[20px] font-[400] bg-transparent w-full focus:outline-none text-[#9F9FA9] !border-0'>
+                                            <select name="country" className='placeholder:text-[16px] md:placeholder:text-[18px] placeholder:font-[400] placeholder:leading-[20px] md:placeholder:leading-[24px] text-[16px] md:text-[15px] lg:text-[18px] xxl:text-[20px] font-[400] bg-transparent w-full focus-within:placeholder:text-black focus:outline-none text-[#9F9FA9] !border-0'>
                                                 <option value="country" className='font-[400] pb-4'>Country</option>
                                                 <option value="name" className='font-[400] pb-4'>US</option>
                                                 <option value="name" className='font-[400] pb-4'>UK</option>
@@ -187,9 +187,9 @@ const ReachUs = () => {
                                         </div>
                                     </motion.div>
                                     <motion.div variants={textVariantsTwo} className="col-span-12 md:col-span-6">
-                                        <div className="mb-[15px] md:mb-0 border border-[#e2e2e27f] bg-[#F8F8FA] py-4 px-4 flex items-center gap-3 rounded-[50px]">
+                                        <div className="mb-[15px] md:mb-0 border border-[#e2e2e27f] focus-within:border-2 focus-within:border-[#A994FD] bg-[#F8F8FA] py-4 px-4 flex items-center gap-3 rounded-[50px] h-[64px]">
                                             <Image src={Form9} alt='Icon' />
-                                            <select name="products" className='placeholder:text-[16px] md:placeholder:text-[18px] placeholder:font-[400] placeholder:leading-[20px] md:placeholder:leading-[24px] text-[16px] md:text-[15px] lg:text-[18px] xxl:text-[20px] font-[400] bg-transparent w-full focus:outline-none text-[#9F9FA9] !border-0'>
+                                            <select name="products" className='placeholder:text-[16px] md:placeholder:text-[18px] placeholder:font-[400] placeholder:leading-[20px] md:placeholder:leading-[24px] text-[16px] md:text-[15px] lg:text-[18px] xxl:text-[20px] font-[400] bg-transparent w-full focus-within:placeholder:text-black focus:outline-none text-[#9F9FA9] !border-0'>
                                                 <option value="products" className='font-[400]'>Product Interest</option>
                                                 <option value="name" className='font-[400]'>Products 1</option>
                                                 <option value="name" className='font-[400]'>Products 2</option>
@@ -199,9 +199,9 @@ const ReachUs = () => {
                                         </div>
                                     </motion.div>
                                     <motion.div variants={textVariantsTwo} className="col-span-12">
-                                        <div className="border border-[#e2e2e27f] bg-[#F8F8FA] py-4 px-4 flex items-start gap-3 rounded-[20px] h-[255px]">
+                                        <div className="border border-[#e2e2e27f] focus-within:border-2 focus-within:border-[#A994FD] bg-[#F8F8FA] py-4 px-4 flex items-start gap-3 rounded-[20px] h-[255px]">
                                             <Image src={Form10} alt='Icon' className='pt-[1px]' />
-                                            <textarea name='message' placeholder='Questions/Comments' className='placeholder:text-[16px] md:placeholder:text-[18px] placeholder:font-[400] placeholder:leading-[20px] md:placeholder:leading-[24px] text-[16px] md:text-[15px] lg:text-[18px] xxl:text-[20px] font-[400] bg-transparent w-full focus:outline-none text-white h-full resize-none' />
+                                            <textarea name='message' placeholder='Questions/Comments' className='placeholder:text-[16px] md:placeholder:text-[18px] placeholder:font-[400] placeholder:leading-[20px] md:placeholder:leading-[24px] text-[16px] md:text-[15px] lg:text-[18px] xxl:text-[20px] font-[400] bg-transparent w-full focus-within:placeholder:text-black focus:outline-none text-white h-full resize-none' />
                                         </div>
                                     </motion.div>
                                     <motion.div variants={textVariantsTwo} className="col-span-12">

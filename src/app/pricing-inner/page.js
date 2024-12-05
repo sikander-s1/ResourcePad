@@ -22,6 +22,7 @@ import Icons4 from "media/icons/faqs-icon-4.png"
 import Icons5 from "media/icons/faqs-icon-5.png"
 import Icon1 from "media/icons/tab-icon1.png";
 import Icon2 from "media/icons/tab-icon2.png";
+import css from 'styled-jsx/css'
 
 const ProductCRMInner = () => {
 
@@ -146,7 +147,8 @@ const ProductCRMInner = () => {
     const IncludedContent = {
         title: "What's included",
         desc: "Get 100+ features out of the box with the world's leading customer insights hub",
-        cardContent: cardContent
+        cardContent: cardContent,
+        css: 'lg:pb-0'
     }
 
     //===== FAQS =====//

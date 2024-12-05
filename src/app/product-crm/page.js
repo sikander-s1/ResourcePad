@@ -81,7 +81,6 @@ const ProductCRMInner = () => {
             index: 6,
         },
     ];
-
     const tabContents = [
         {
             tabImage: tab1,

@@ -1,9 +1,10 @@
 import React from 'react'
+import Link from 'next/link'
 import Image from 'next/image'
 import { motion } from "framer-motion";
 // Images
 import Map from "media/map-2.png"
-import Link from 'next/link'
+import Particle from "media/bg-particle.png"
 
 const textVariants = {
     initial: {
@@ -30,7 +31,10 @@ const textVariants = {
 
 const ContactBanner = () => {
     return (
-        <section className='pt-[80px] xl:pt-[120px] relative'>
+        <section className='pt-[80px] xl:pt-[120px] relative z-0'>
+            <div className="bg_particle absolute top-0 right-0 z-[-1]">
+                <Image src={Particle} alt='particle' className='w-full max-h-[280px] ml-auto'/>
+            </div>
             <div className="container">
                 <div className="grid grid-cols-12">
                     <div className="col-span-12">

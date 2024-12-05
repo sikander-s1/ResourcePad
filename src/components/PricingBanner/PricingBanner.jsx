@@ -127,7 +127,7 @@ const PricingBanner = ({ content }) => {
                             <motion.h1 variants={textVariants} className="mb-4 font-bold text-[#202020] text-[30px] sm:text-[40px] md:text-[55px] lg:text-[65px] leading-[40px] sm:leading-[50px] md:leading-[65px] lg:leading-[75px]">
                                 {title}
                             </motion.h1>
-                            <motion.p variants={textVariants} className="mx-auto mb-5 sm:mb-10 lg:mb-20 lg:w-10/12 xl:w-9/12 font-normal text-[#646474] text-[16px] md:text-[22px] leading-[23px] md:leading-[29px]">
+                            <motion.p variants={textVariants} className="mx-auto mb-5 sm:mb-10 lg:mb-32 lg:w-10/12 xl:w-9/12 font-normal text-[#646474] text-[16px] md:text-[22px] leading-[23px] md:leading-[29px]">
                                 {desc}
                             </motion.p>
                         </motion.div>
@@ -239,7 +239,7 @@ const PricingBanner = ({ content }) => {
                                                                         <>
                                                                             <div className="flex items-center group">
                                                                                 <Link href="#href" className='flex justify-center items-center gap-x-3 border-[#D8D8D8] bg-transparent border rounded-full w-full h-[65px] font-semibold group-hover:bg-[#6B46FF] text-[#6B46FF] text-[18px] leading-[25px]  group-hover:text-white group-hover:duration-700 ease-in-out duration-700 '>
-                                                                                    <Image src={PhoneTwo} alt='Phone' className='group-hover:brightness-[100] group-hover:duration-700 duration-700 ease-in-out'/>
+                                                                                    <Image src={PhoneTwo} alt='Phone' className='group-hover:brightness-[100] group-hover:duration-700 duration-700 ease-in-out' />
                                                                                     Talk to Sales
                                                                                 </Link>
                                                                                 <Link href='#href' className='hidden sm:flex justify-center items-center border-[#D8D8D8] bg-transparent group-hover:bg-[#6B46FF] border rounded-full w-[75px] h-[65px] group-hover:duration-700 ease-in-out duration-700 overflow-hidden circleBtn'>
